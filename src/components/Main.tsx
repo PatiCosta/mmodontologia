@@ -4,19 +4,24 @@ import { MoveRight } from 'lucide-react'
 
 export function Main() {
   return (
-    <Flex direction="column" gap={16} alignItems="stretch" my={16} px={32}>
-      <Flex gap={6} alignItems="end">
+    <Flex direction={["column-reverse","column","column","column"]} gap={16} alignItems="stretch" my={16} px={[2,32,32,32]} border='1px solid red'>
+
+      {/* Banners com contato */}
+      <Flex flexDir={['column-reverse', 'column', 'row', 'row']} w={['100%','','','']} gap={6} alignItems="end" border='1px solid red'>
+
+        {/* CARD 1 */}
         <Flex
           py={6}
-          px={8}
+          px={[0,0,0,8]}
           bgImage="/assets/clinica_main.png"
           bgPosition="center"
           bgSize="cover"
-          w="calc((100vw - 16rem)/3)"
+          w={["100%","100%","100%","calc((100vw - 16rem)/3)"]}
           h="432px"
           boxShadow="dark"
           direction="column"
           justifyContent="end"
+          border='1px solid red'
         >
           <Button
             display="flex"
@@ -37,11 +42,13 @@ export function Main() {
             <MoveRight size={24} color="#fefefe" />
           </Button>
         </Flex>
+
+        {/* CARD 2 */}
         <Flex
           bgImage="/assets/yourSmileOurPassion.png"
           bgPosition="center"
           bgSize="cover"
-          w="calc((100vw - 16rem)/3)"
+          w={["100%","100%","100%","calc((100vw - 16rem)/3)"]}
           h="432px"
           boxShadow="dark"
           direction="column"
@@ -58,26 +65,29 @@ export function Main() {
             <Heading color="light" size="xs" text="PAIXÃO" />
           </Flex>
         </Flex>
+
         <Box
           bgImage="/assets/marina_main.png"
           bgPosition="center"
           bgSize="cover"
-          w="calc((100vw - 17.5rem)/3)"
+          w={["100%","100%","100%","calc((100vw - 17.5rem)/3)"]}
           h="432px"
           ml={-12}
         />
+
       </Flex>
-      <Flex gap={20} alignItems="end">
+
+      {/* Subtitulo e descrição promocional */}
+      <Flex flexDir={['column', 'column', 'row', 'row']} gap={[2,20,20,20]} alignItems={["start","end","end","end"]}>
         <Heading
           size="lg"
-          text="Realçando a beleza
-                    que já existe em você"
+          text="Realçando a beleza que já existe em você"
           color="battleship"
           isHighlighted
           highlightedText={['Realçando', 'já existe']}
         />
-        <Flex direction="column" gap={4} alignItems="end" pb={3}>
-          <Text fontSize="lg" lineHeight="lg" textAlign="end">
+        <Flex direction="column" gap={4} alignItems={["start","end","end","end"]} pb={3}>
+          <Text fontSize="lg" lineHeight="lg" textAlign={["start","end","end","end"]}>
             Descubra a arte da harmonização facial e do sorriso perfeito
             conosco, onde a beleza e a saúde se unem para transformar vidas.
           </Text>

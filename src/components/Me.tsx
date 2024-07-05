@@ -45,15 +45,9 @@ export function Me() {
             <Box h="0.5px" w={64} bgColor="silver" mt={14} />
           </Box>
           <Text fontSize="lg" lineHeight="lg">
-            Lorem ipsum dolor sit amet consectetur. Ultrices tempus felis dictum
-            id cras orci congue arcu. In viverra vel proin vel. Nec facilisi
-            eget id et ullamcorper consectetur urna ultricies. Purus risus metus
-            integer velit orci suspendisse eu. Dui dictum est lacus montes sed
-            diam mi sed et. Lorem laoreet mollis euismod sem tempus. Ultrices
-            diam justo tellus sit quisque nulla sapien id enim. At lacinia odio
-            facilisis aenean cum quam. Risus turpis tortor vestibulum bibendum.
-            Erat tincidunt tellus dolor et viverra phasellus scelerisque.
-            Aliquet varius.
+            A Dra. Marina, apaixonada por transformar sorrisos e vidas, lidera nossa equipe de especialistas. Com diversas especializações e cursos em odontologia estética, ortodontia, harmonização facial e implantodontia, ela garante um atendimento personalizado e resultados impecáveis. <br></br> <br></br>
+
+            Nossa clínica conta com uma equipe multidisciplinar de profissionais altamente qualificados, prontos para cuidar da sua saúde bucal em todas as áreas. Oferecemos desde os tratamentos mais tradicionais até as técnicas mais avançadas, sempre com foco no seu bem-estar e satisfação.
           </Text>
         </Flex>
         <Flex alignItems="end" pt={16}>

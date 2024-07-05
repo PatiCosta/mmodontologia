@@ -7,7 +7,7 @@ export function Footer() {
       direction="column"
       alignItems="center"
       px="30vw"
-      bgColor="eerie"
+      bgColor="dim"
       pt={20}
     >
       <Flex direction="column" gap={3} alignItems="center">

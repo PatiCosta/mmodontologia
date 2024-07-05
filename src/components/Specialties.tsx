@@ -13,18 +13,11 @@ function Specialty({
   return (
     <Flex alignItems="start" gap={6}>
       <Box w="px" bgColor="silver" h={10} mt={5} />
-      <Flex direction="column" gap={3} alignItems="start">
+      <Flex direction="column" gap={3}  pb={4}alignItems="start">
         <Heading color="dim" size="sm" text={title} />
         <Text fontSize="lg" lineHeight="lg">
           {description}
         </Text>
-        <Flex alignItems="center" gap={2} cursor="pointer">
-          <Text fontSize="lg" lineHeight="lg" color="dim">
-            {' '}
-            VEJA MAIS
-          </Text>
-          <Icon as={MoveDown} boxSize={4} color="battleship" />
-        </Flex>
       </Flex>
     </Flex>
   )
@@ -60,7 +53,7 @@ export function Specialties() {
             description="Especialidade que envolve a colocação de implantes dentários para substituir dentes ausentes e restaurar a função mastigatória e estética."
           />
         </VStack>
-        <Flex alignItems="end" pl={32} pr={20} pt={16} bgColor="eerie">
+        <Flex alignItems="end" pl={32} pr={20} pt={16} bgColor="dim">
           <ContactButton />
         </Flex>
       </Box>

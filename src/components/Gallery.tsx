@@ -4,7 +4,7 @@ import { MoveLeft, MoveRight } from 'lucide-react'
 
 export function Gallery() {
   return (
-    <Box bgColor="eerie" pt={28} pb={28} mt={-28}>
+    <Box bgColor="dim" pt={28} pb={28} mt={-28}>
       <Box h="0.5px" w="calc(100% - 16rem)" mx={32} mt={20} bgColor="dim" />
       <Flex alignItems="center" justifyContent="space-between" mx={32} mt={16}>
         <Flex

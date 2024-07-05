@@ -6,6 +6,7 @@ import { Gallery } from '@/components/Gallery'
 import { Header } from '@/components/Header'
 import { Location } from '@/components/Location'
 import { Main } from '@/components/Main'
+import { MainAlternativa } from '@/components/MainAlternativa'
 import { Me } from '@/components/Me'
 import { Specialties } from '@/components/Specialties'
 
@@ -14,6 +15,7 @@ export default function Home() {
     <>
       <Header />
       <Main />
+      {/* <MainAlternativa />
       <About />
       <Data />
       <Specialties />
@@ -21,7 +23,7 @@ export default function Home() {
       <Me />
       <Feedbacks />
       <Location />
-      <Footer />
+      <Footer /> */}
     </>
   )
 }

@@ -3,7 +3,7 @@ import { Heading } from './Heading'
 
 export function Location() {
   return (
-    <Box bgColor="eerie" pt={28} mt={-28}>
+    <Box bgColor="dim" pt={28} mt={-28}>
       <Flex alignItems="stretch" gap={10} mt={28} pl={32}>
         <Flex
           direction="column"

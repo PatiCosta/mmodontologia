@@ -5,7 +5,7 @@ import { Heading } from './Heading'
 export function Data() {
   return (
     <SimpleGrid
-      bgColor="eerie"
+      bgColor="dim"
       px={32}
       pt={48}
       pb={28}
