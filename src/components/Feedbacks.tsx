@@ -1,8 +1,13 @@
-import { Avatar, Box, Flex, Grid, Text } from '@chakra-ui/react'
+import { Avatar, Box, Flex, Grid, Icon, Text, useBreakpointValue } from '@chakra-ui/react'
 import { Heading } from './Heading'
 import { ChatsTeardrop, Quotes } from 'phosphor-react'
 
-function Feedback() {
+import { MoveLeft, MoveRight } from 'lucide-react'
+import { use, useState } from 'react'
+import { carouselPics } from './helpers/carousel'
+import { feedbackslist } from './helpers/feedbacks'
+
+function Feedback({ feedback, patient, role }: { feedback: string, patient: string, role: string }) {
   return (
     <Flex
       direction="column"
@@ -18,19 +23,16 @@ function Feedback() {
     >
       <Quotes size={32} weight="duotone" color="#B1B1AE" />
       <Text fontSize="lg" lineHeight="lg">
-        Lorem ipsum dolor sit amet consectetur. Enim lacus eu ipsum sociis amet
-        arcu quis. Fusce hac faucibus nulla risus consequat. Nibh enim velit et
-        accumsan tellus. At tristique porttitor aliquet nunc gravida est. Nibh
-        nisl mollis sagittis sed.
+        {feedback}
       </Text>
       <Flex alignItems="center" gap={3} justifyContent="center">
         <Avatar size="md" name="Rita Thiel" src="https://bit.ly/broken-link" />
         <Box>
           <Text fontSize="lg" lineHeight="lg" color="battleship">
-            Rita Thiel
+            {patient}
           </Text>
           <Text fontSize="md" lineHeight="md" color="eerie">
-            Paciente de odontologia
+            {role}
           </Text>
         </Box>
       </Flex>
@@ -39,12 +41,25 @@ function Feedback() {
 }
 
 export function Feedbacks() {
+
+  const isMobile = useBreakpointValue({
+    base: true,
+    sm: true,
+    md: true,
+    lg: false,
+    xl: false
+  })
+
+  const [feedbackIndex, setFeedbackIndex] = useState(0)
+
+  const feedbacksLength = feedbackslist.length
+
   return (
     <Grid
-      templateColumns="1fr 1fr 1fr"
+      templateColumns={["1fr", "1fr", "1fr", "1fr 1fr 1fr", "1fr 1fr 1fr"]}
       rowGap={10}
       columnGap={6}
-      px={32}
+      px={[8, 8, 8, 32, 32]}
       mt={28}
       zIndex="dropdown"
       position="relative"
@@ -60,7 +75,7 @@ export function Feedbacks() {
           </Text>
           <Heading
             color="battleship"
-            size="lg"
+            size={isMobile? "md":"lg" }
             text="O que nossos pacientes têm a dizer?"
             isHighlighted
             highlightedText={['nossos', 'pacientes', 'dizer']}
@@ -76,14 +91,64 @@ export function Feedbacks() {
           <Box h="px" w="100%" bgColor="silver" mb={1} />
         </Flex>
       </Flex>
-      <Feedback />
-      <Feedback />
-      <Feedback />
-      <Feedback />
-      <Feedback />
-      <Feedback />
-      <Feedback />
-      <Feedback />
-    </Grid>
+
+      {isMobile ?
+
+        <>
+          <Flex
+            onClick={() => { feedbackIndex <= 0 ? setFeedbackIndex(feedbacksLength - 1) : setFeedbackIndex(feedbackIndex - 1) }}
+            alignItems="center"
+            position="absolute"
+            left={["0.4rem", "0.4rem", "2rem", "4rem", "4rem"]}
+            top={420}
+            borderRadius="full"
+            bgColor="battleship"
+            _hover={{ bgColor: 'silver' }}
+            transition="all 0.2s ease"
+            backdropFilter="auto"
+            backdropBlur="5px"
+            p={[2, 2, 2, 9, 9]}
+            cursor="pointer"
+          >
+            <Icon as={MoveLeft} boxSize={6} color="light" />
+          </Flex>
+
+          <Feedback
+            feedback={feedbackslist[feedbackIndex].feedback}
+            patient={feedbackslist[feedbackIndex].patient}
+            role={feedbackslist[feedbackIndex].role}
+          />
+
+          <Flex
+            onClick={() => { feedbackIndex >= feedbacksLength - 1 ? setFeedbackIndex(0) : setFeedbackIndex(feedbackIndex + 1) }}
+            alignItems="center"
+            position="absolute"
+            right={["0.4rem", "0.4rem", "2rem", "4rem", "4rem"]}
+            top={420}
+            borderRadius="full"
+            bgColor="battleship"
+            _hover={{ bgColor: 'silver' }}
+            transition="all 0.2s ease"
+            backdropFilter="auto"
+            backdropBlur="5px"
+            p={[2, 2, 2, 9, 9]}
+            cursor="pointer"
+          >
+            <Icon as={MoveRight} boxSize={6} color="light" />
+          </Flex>
+        </>
+        :
+
+        feedbackslist.map((feedback) => {
+          return (
+
+            <Feedback feedback={feedback.feedback} patient={feedback.patient} role={feedback.role} />
+          )
+        })
+
+      }
+
+
+    </Grid >
   )
 }

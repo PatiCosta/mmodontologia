@@ -6,9 +6,9 @@ export function Footer() {
     <Flex
       direction="column"
       alignItems="center"
-      px="30vw"
+      px={["4vw","4vw","4vw","30vw","30vw"]}
       bgColor="dim"
-      pt={20}
+      pt={[0,0,0,20,20]}
     >
       <Flex direction="column" gap={3} alignItems="center">
         <Image src="/assets/logo_light.svg" alt="logo" h="9rem" />

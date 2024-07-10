@@ -1,4 +1,4 @@
-import { Box, Flex, Icon, Text, VStack } from '@chakra-ui/react'
+import { Box, Flex, Icon, Text, VStack, useBreakpointValue } from '@chakra-ui/react'
 import { ContactButton } from './ContactButton'
 import { Heading } from './Heading'
 import { MoveDown } from 'lucide-react'
@@ -13,7 +13,7 @@ function Specialty({
   return (
     <Flex alignItems="start" gap={6}>
       <Box w="px" bgColor="silver" h={10} mt={5} />
-      <Flex direction="column" gap={3}  pb={4}alignItems="start">
+      <Flex direction="column" gap={3} pb={4} alignItems="start">
         <Heading color="dim" size="sm" text={title} />
         <Text fontSize="lg" lineHeight="lg">
           {description}
@@ -24,13 +24,23 @@ function Specialty({
 }
 
 export function Specialties() {
+
+  const isMobile = useBreakpointValue({
+    base: true,
+    sm: true,
+    md: true,
+    lg: false,
+    xl: false
+  })
+
   return (
-    <Flex alignItems="stretch" mt={28} zIndex="docked" position="relative">
+    <Flex alignItems="stretch" mt={28} gap={12} flexDir={['column-reverse', 'column-reverse', 'column-reverse', 'row', 'row']} zIndex="docked" position="relative">
       <Box flex="1">
         <VStack
-          pl={32}
+          pl={[2, 2, 2, 32, 32]}
+          pr={[4, 4, 4, 0, 0]}
           mb={16}
-          mr={20}
+          mr={[0, 0, 0, 20, 20]}
           spacing={6}
           divider={<Box h="0.5px" bgColor="silver" w="80%" />}
         >
@@ -53,20 +63,33 @@ export function Specialties() {
             description="Especialidade que envolve a colocação de implantes dentários para substituir dentes ausentes e restaurar a função mastigatória e estética."
           />
         </VStack>
-        <Flex alignItems="end" pl={32} pr={20} pt={16} bgColor="dim">
+        {isMobile ?
+          <Box
+            bgImage="/assets/botox2.png"
+            bgPosition="center"
+            bgSize="cover"
+            w={["100%", "100%", "100%", "calc(100vw - (50vw + 8rem))", "calc(100vw - (50vw + 8rem))"]}
+            h={["264px", "264px", "264px", "calc((100%/2) - 0.75rem)", "calc((100%/2) - 0.75rem)"]}
+            mt={6}
+          />
+          :
+          ''}
+        <Flex alignItems="end" pl={[4,4,4,32,32]} pr={[4,4,4,20,20]} mt={[-16,-16,-16,0,0]} pt={[0,16,16,16,16]} bgColor={["none","none","none","dim","dim"]}>
           <ContactButton />
         </Flex>
       </Box>
+
       <Flex
         direction="column"
-        // alignItems="stretch"
-        // justifyContent="space-between"
+        px={[4, 4, 4, 0, 0]}
+      // alignItems="stretch"
+      // justifyContent="space-between"
       >
         <Flex
           direction="column"
           alignItems="start"
-          pr={32}
-          w="calc(100vw - (50vw + 8rem))"
+          pr={[8, 8, 8, 32, 32]}
+          w={["100%", "100%", "100%", "calc(100vw - (50vw + 8rem))", "calc(100vw - (50vw + 8rem))"]}
         >
           <Text fontSize="md" lineHeight="md" mb={1}>
             ESPECIALIZAÇÕES
@@ -84,19 +107,25 @@ export function Specialties() {
             bgImage="/assets/botox.png"
             bgPosition="center"
             bgSize="cover"
-            w="calc(100vw - (50vw + 8rem))"
-            h="calc((100%/2) - 0.75rem)"
+            w={["100%", "100%", "100%", "calc(100vw - (50vw + 8rem))", "calc(100vw - (50vw + 8rem))"]}
+            h={["264px", "264px", "264px", "calc((100%/2) - 0.75rem)", "calc((100%/2) - 0.75rem)"]}
           />
-          <Box
-            bgImage="/assets/botox2.png"
-            bgPosition="center"
-            bgSize="cover"
-            w="calc(100vw - (50vw + 8rem))"
-            h="calc((100%/2) - 0.75rem)"
-            mt={6}
-          />
+          {isMobile ?
+            ''
+            :
+
+            <Box
+              bgImage="/assets/botox2.png"
+              bgPosition="center"
+              bgSize="cover"
+              w={["100%", "100%", "100%", "calc(100vw - (50vw + 8rem))", "calc(100vw - (50vw + 8rem))"]}
+              h={["264px", "264px", "264px", "calc((100%/2) - 0.75rem)", "calc((100%/2) - 0.75rem)"]}
+              mt={6}
+            />
+          }
         </Box>
       </Flex>
+
     </Flex>
   )
 }

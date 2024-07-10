@@ -4,7 +4,15 @@ import { Heading } from './Heading'
 export function Location() {
   return (
     <Box bgColor="dim" pt={28} mt={-28}>
-      <Flex alignItems="stretch" gap={10} mt={28} pl={32}>
+      <Flex
+        alignItems="stretch"
+        gap={10}
+        mt={28}
+        pr={[4, 4, 4, 32, 32]}
+        pl={[4, 4, 4, 32, 32]}
+        flexDir={['column', 'column', 'column', 'row', 'row']}
+      >
+
         <Flex
           direction="column"
           alignItems="start"
@@ -31,7 +39,13 @@ export function Location() {
           bgImage="/assets/map.png"
           bgPos="center"
           bgSize="cover"
-          w="calc(100vw - 8rem - ((100vw - 16rem - 3rem)/3))"
+          w={[
+            "100%",
+            "100%",
+            "100%",
+            "calc(100vw - 8rem - ((100vw - 16rem - 3rem)/3))",
+            "calc(100vw - 8rem - ((100vw - 16rem - 3rem)/3))"
+          ]}
           h={96}
         />
       </Flex>

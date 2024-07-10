@@ -1,39 +1,62 @@
-import { Box, Flex, Text } from '@chakra-ui/react'
+import { Box, Flex, Text, useBreakpointValue } from '@chakra-ui/react'
 import { Heading } from './Heading'
 import { ContactButton } from './ContactButton'
 
 export function About() {
+
+  const isMobile = useBreakpointValue({
+    base: true,
+    sm: true,
+    md: true,
+    lg: false,
+    xl: false
+  })
+
   return (
-    <Flex alignItems="end" mt={20} zIndex="docked" position="relative">
+    <Flex 
+    zIndex="docked"
+    alignItems="end"
+    position="relative"
+    mt={['10vh',20,20,20,20]}
+    flexDir={['column','column-reverse','column-reverse','row','row']}
+    >
+      
+      {/* FOTO CADEIRA CONSULTÓRIO */}
       <Box
         bgImage="/assets/about.png"
-        bgPosition="center"
+        bgPosition={["top","top","top","center","center"]}
+        bgRepeat={'no-repeat'}
         bgSize="cover"
-        w="calc(100vw - 40rem)"
-        h="800px"
+        w={["100%","calc(100vw - 40rem)","calc(100vw - 40rem)","calc(100vw - 40rem)"]}
+        h={["360px","800px","800px","800px","800px"]}
       />
-      <Box mt={20} flex="1">
+
+      <Box mt={[8,8,8,20,20]} flex="1" >
         <Flex
           direction="column"
           alignItems="start"
           gap={6}
-          mb={16}
-          pr={32}
-          pl={20}
+          mb={[8,4,4,16,16]}
+          pr={[8,8,8,32,32]}
+          pl={[4,4,4,20,20]}
         >
           <Box>
             <Text fontSize="md" lineHeight="md" mb={1}>
               SOBRE NÓS
             </Text>
             <Heading
-              color="battleship"
-              size="lg"
+              color={isMobile? "eerie" : 'battleship'}
+              size={isMobile? "md" : 'lg'}
               text="Tudo o que você precisa em um só lugar"
               isHighlighted
               highlightedText={['Tudo', 'um só']}
             />
           </Box>
-          <Text fontSize="lg" lineHeight="lg">
+          <Text 
+          fontSize={isMobile? "md" : 'lg'} 
+          lineHeight={isMobile? "md" : 'lg'} 
+          textAlign={['justify','justify','justify','start','start']}
+          >
             Aqui, você tem acesso a uma equipe multidisciplinar altamente
             qualificada que combina o conhecimento da odontologia com a
             expertise da harmonização facial, proporcionando um atendimento
@@ -47,8 +70,8 @@ export function About() {
             são prioridades em um ambiente de excelência.
           </Text>
         </Flex>
-        <Flex alignItems="end" pl={20} pr={32} pt={16}>
-          <ContactButton />
+        <Flex alignItems="end" pl={[4,0,0,20,20]} pr={[4,0,0,32,32]} pt={[0,0,0,16,16]} >
+          <ContactButton isDark={isMobile} />
         </Flex>
       </Box>
     </Flex>

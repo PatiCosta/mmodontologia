@@ -50,7 +50,7 @@ export function Header() {
 
       {isMobile ?
         // MOBILE HEADER
-        <Flex w='100%'>
+        <Flex w='100%' >
           <Grid
             p={4}
             w='100%'
@@ -58,15 +58,16 @@ export function Header() {
             position='relative'
             templateColumns={['', '', '', 'repeat(12,1fr)', 'repeat(12,1fr)']}
             justifyContent={'space-between'}
+            
           >
 
-            <GridItem colStart={[0, 0, 1, 1, 1]} colEnd={[0, 0, 3, 3, 3]}>
+            <GridItem colStart={[0, 0, 1, 1, 1]} colEnd={[0, 0, 3, 3, 3]} >
 
               {/* LOGO */}
               <Link href='/' _hover={{ textDecoration: 'none' }}>
                 <HStack alignItems='center' pl={[0,0,8,8,8]}>
                   <Flex>
-                    <Image maxW={[56,56,64,64,64]} src="/assets/logo.svg" alt="icon" />
+                    <Image maxW={[56,56,64,64,64]} src="/assets/logo.svg" alt="icon" borderBottom='1px solid #00000033' />
                   </Flex>
                 </HStack>
               </Link>

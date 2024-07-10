@@ -9,13 +9,16 @@ import { Main } from '@/components/Main'
 import { MainAlternativa } from '@/components/MainAlternativa'
 import { Me } from '@/components/Me'
 import { Specialties } from '@/components/Specialties'
+import { Flex, useBreakpointValue } from '@chakra-ui/react'
 
 export default function Home() {
+
+
   return (
     <>
       <Header />
       <Main />
-      {/* <MainAlternativa />
+      {/* <MainAlternativa /> */}
       <About />
       <Data />
       <Specialties />
@@ -23,7 +26,7 @@ export default function Home() {
       <Me />
       <Feedbacks />
       <Location />
-      <Footer /> */}
+      <Footer />
     </>
   )
 }
