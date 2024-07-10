@@ -41,7 +41,7 @@ export function Header() {
     base: true,
     sm: true,
     md: true,
-    lg: false,
+    lg: true,
     xl: false
   })
 

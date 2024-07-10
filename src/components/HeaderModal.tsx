@@ -27,7 +27,7 @@ export function ModalMenu({
             <Button
                 position='absolute'
                 right='0'
-                my='auto'
+                top={10}
                 w='50px'
                 mr={[8,4,12,'','']}
                 fontSize='1.6rem'

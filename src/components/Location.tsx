@@ -8,8 +8,8 @@ export function Location() {
         alignItems="stretch"
         gap={10}
         mt={28}
-        pr={[4, 4, 4, 32, 32]}
-        pl={[4, 4, 4, 32, 32]}
+        pr={[4, 4, 4, 8, 32]}
+        pl={[4, 4, 4, 8, 32]}
         flexDir={['column', 'column', 'column', 'row', 'row']}
       >
 

@@ -59,7 +59,7 @@ export function Feedbacks() {
       templateColumns={["1fr", "1fr", "1fr", "1fr 1fr 1fr", "1fr 1fr 1fr"]}
       rowGap={10}
       columnGap={6}
-      px={[8, 8, 8, 32, 32]}
+      px={[8, 8, 8, 8, 32]}
       mt={28}
       zIndex="dropdown"
       position="relative"
@@ -99,8 +99,8 @@ export function Feedbacks() {
             onClick={() => { feedbackIndex <= 0 ? setFeedbackIndex(feedbacksLength - 1) : setFeedbackIndex(feedbackIndex - 1) }}
             alignItems="center"
             position="absolute"
-            left={["0.4rem", "0.4rem", "2rem", "4rem", "4rem"]}
-            top={420}
+            left={["0.4rem", "0.4rem", "0.4rem", "4rem", "4rem"]}
+            top={[420,420,264,0,0]}
             borderRadius="full"
             bgColor="battleship"
             _hover={{ bgColor: 'silver' }}
@@ -123,8 +123,8 @@ export function Feedbacks() {
             onClick={() => { feedbackIndex >= feedbacksLength - 1 ? setFeedbackIndex(0) : setFeedbackIndex(feedbackIndex + 1) }}
             alignItems="center"
             position="absolute"
-            right={["0.4rem", "0.4rem", "2rem", "4rem", "4rem"]}
-            top={420}
+            right={["0.4rem", "0.4rem", "0.4rem", "4rem", "4rem"]}
+            top={[420,420,264,0,0]}
             borderRadius="full"
             bgColor="battleship"
             _hover={{ bgColor: 'silver' }}

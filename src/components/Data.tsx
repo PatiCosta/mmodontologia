@@ -15,7 +15,7 @@ export function Data() {
   return (
     <SimpleGrid
       bgColor="dim"
-      px={[4, 32, 32, 32, 32]}
+      px={[4, 32, 32, 8, 32]}
       pt={[16, 16, 16, 48, 48]}
       pb={[16, 16, 16, 28, 28]}
       gap={[8, 8, 2, 2, 2]}
@@ -60,7 +60,7 @@ export function Data() {
       }
 
       {/* BLOCOS INICIAIS NUMÉRICOS */}
-      <Flex px={[0, 0, 0, 10, 10]} pb={[0, 0, 0, 10, 10]} textAlign={['center', 'center', 'center', 'end', 'end']} alignItems="center" direction="column">
+      <Flex px={[0, 0, 0, 2, 10]} pb={[0, 0, 0, 10, 10]} textAlign={['center', 'center', 'center', 'end', 'end']} alignItems="center" direction="column">
         <Text
           fontSize={["2.875rem", "2.875rem", "2.875rem", "4rem", "4rem"]}
           lineHeight={["4rem", "4rem", "4rem", "5rem", "5rem"]}
@@ -81,7 +81,7 @@ export function Data() {
           </Text>
         </Box>
       </Flex>
-      <Flex px={[0, 0, 0, 10, 10]} pb={[0, 0, 0, 10, 10]} textAlign={['center', 'center', 'center', 'end', 'end']} alignItems="center" direction="column">
+      <Flex px={[0, 0, 0, 2, 10]} pb={[0, 0, 0, 10, 10]} textAlign={['center', 'center', 'center', 'end', 'end']} alignItems="center" direction="column">
         <Text
           fontSize={["2.875rem", "2.875rem", "2.875rem", "4rem", "4rem"]}
           lineHeight={["4rem", "4rem", "4rem", "5rem", "5rem"]}
@@ -102,7 +102,7 @@ export function Data() {
           </Text>
         </Box>
       </Flex>
-      <Flex px={[0, 0, 0, 10, 10]} pb={[0, 0, 0, 10, 10]} textAlign={['center', 'center', 'center', 'end', 'end']} alignItems="center" direction="column">
+      <Flex px={[0, 0, 0, 2, 10]} pb={[0, 0, 0, 10, 10]} textAlign={['center', 'center', 'center', 'end', 'end']} alignItems="center" direction="column">
         <Text
           fontSize={["2.875rem", "2.875rem", "2.875rem", "4rem", "4rem"]}
           lineHeight={["4rem", "4rem", "4rem", "5rem", "5rem"]}
@@ -123,7 +123,7 @@ export function Data() {
           </Text>
         </Box>
       </Flex>
-      <Flex px={[0, 0, 0, 10, 10]} pb={[0, 0, 0, 10, 10]} textAlign={['center', 'center', 'center', 'end', 'end']} alignItems="center" direction="column">
+      <Flex px={[0, 0, 0, 2, 10]} pb={[0, 0, 0, 10, 10]} textAlign={['center', 'center', 'center', 'end', 'end']} alignItems="center" direction="column">
         <Text
           fontSize={["2.875rem", "2.875rem", "2.875rem", "4rem", "4rem"]}
           lineHeight={["4rem", "4rem", "4rem", "5rem", "5rem"]}

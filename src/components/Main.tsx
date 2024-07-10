@@ -16,14 +16,19 @@ export function Main() {
   return (
     <Flex
       alignItems="stretch"
-      direction={["column-reverse", "column", "column", "column"]}
-      gap={[8, 16, 16, 16, 16]}
+      direction={["column-reverse", "column-reverse","column-reverse", "column", "column"]}
+      gap={[4, 4, 4, 16, 16]}
       my={[8, 16, 16, 16, 16]}
-      px={[4, 32, 32, 32]}>
+      px={[4, 4, 8, 12, 32]}>
       
 
       {/* Banners com contato */}
-      <Flex flexDir={['column-reverse', 'column', 'row', 'row']} w={['100%', '', '', '']} gap={[0,6,6,6,6]} alignItems="end">
+      <Flex 
+      flexDir={['column-reverse','column-reverse', 'column-reverse', 'row', 'row']} 
+      w={['100%','100%' ,'100%', '', '']} 
+      gap={[0,0,0,6,6]} 
+      alignItems="end"
+      >
 
         {/* CARD 1 */}
         {isMobile ?
@@ -32,11 +37,11 @@ export function Main() {
           // FOTO DO CONSULTORIO
           <Flex
             py={6}
-            px={[0, 0, 0, 8]}
+            px={[0, 0, 0, 0,8]}
             bgImage="/assets/clinica_main.png"
             bgPosition="center"
             bgSize="cover"
-            w={["100%", "100%", "100%", "calc((100vw - 16rem)/3)"]}
+            w={["100%", "100%", "100%",  "calc((100vw - 16rem)/2)", "calc((100vw - 16rem)/3)"]}
             h="432px"
             boxShadow="dark"
             direction="column"
@@ -94,7 +99,7 @@ export function Main() {
           bgPosition={["right", "center", "center", "center", "center"]}
           bgRepeat={'no-repeat'}
           bgSize={["contain", "contain", "contain", "cover", "cover"]}
-          w={["100%", "100%", "100%", "calc((100vw - 17.5rem)/3)"]}
+          w={["100%", "100%", "100%", "calc((100vw - 17.5rem)/2)","calc((100vw - 17.5rem)/3)"]}
           h={["360px", "360px", "432px", "432px", "432px"]}
           ml={[0, 0, 0, -12, -12]}
         />
@@ -102,7 +107,7 @@ export function Main() {
       </Flex>
 
       {/* Subtitulo e descrição promocional */}
-      <Flex flexDir={['column', 'column', 'row', 'row']} gap={[2, 20, 20, 20]} alignItems={["start", "end", "end", "end"]}>
+      <Flex flexDir={['column', 'column','column', 'row', 'row']} gap={[2, 2, 2, 20, 20]} alignItems={["start", "start", "start","end", "end"]}>
         <Heading
           size={isMobile ? "sm" : "lg"}
           fontSize={['1.75rem', '1.75rem', '1.75rem', '2.5rem', '2.5rem']}
@@ -110,12 +115,13 @@ export function Main() {
           color={"eerie"}
           isHighlighted
           highlightedText={['Realçando', 'já existe']}
-          pr={[4, 8, 8, 0, 0]}
+          textAlign={["start","start", "start", "start", "end"]}
+          pr={[4, 8, 8, 8, 0]}
         />
 
-        <Flex direction="column" gap={4} alignItems={["start", "end", "end", "end"]} pb={3}>
+        <Flex direction="column" gap={4} alignItems={["start", "start", "start", "end", "end"]} pb={3}>
 
-          <Text fontSize={isMobile ? "md" : "lg"} lineHeight={isMobile ? "sm" : "lg"} textAlign={["start", "end", "end", "end"]} pr={[8, 8, 8, 0, 0]}>
+          <Text fontSize={isMobile ? "md" : "lg"} lineHeight={isMobile ? "sm" : "lg"} textAlign={["start","start", "start", "end", "end"]} pr={[8, 8, 8, 0, 0]}>
             Descubra a arte da harmonização facial e do sorriso perfeito
             conosco, onde a beleza e a saúde se unem para transformar vidas.
           </Text>

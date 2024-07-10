@@ -37,7 +37,7 @@ export function Specialties() {
     <Flex alignItems="stretch" mt={28} gap={12} flexDir={['column-reverse', 'column-reverse', 'column-reverse', 'row', 'row']} zIndex="docked" position="relative">
       <Box flex="1">
         <VStack
-          pl={[2, 2, 2, 32, 32]}
+          pl={[2, 2, 2, 2, 32]}
           pr={[4, 4, 4, 0, 0]}
           mb={16}
           mr={[0, 0, 0, 20, 20]}
@@ -74,7 +74,7 @@ export function Specialties() {
           />
           :
           ''}
-        <Flex alignItems="end" pl={[4,4,4,32,32]} pr={[4,4,4,20,20]} mt={[-16,-16,-16,0,0]} pt={[0,16,16,16,16]} bgColor={["none","none","none","dim","dim"]}>
+        <Flex alignItems="end" pl={[4,4,4,4,32]} pr={[4,4,4,4,20]} mt={[-16,-16,-16,0,0]} pt={[0,16,16,16,16]} bgColor={["none","none","none","dim","dim"]}>
           <ContactButton />
         </Flex>
       </Box>
@@ -88,7 +88,7 @@ export function Specialties() {
         <Flex
           direction="column"
           alignItems="start"
-          pr={[8, 8, 8, 32, 32]}
+          pr={[8, 8, 8, 8, 32]}
           w={["100%", "100%", "100%", "calc(100vw - (50vw + 8rem))", "calc(100vw - (50vw + 8rem))"]}
         >
           <Text fontSize="md" lineHeight="md" mb={1}>
