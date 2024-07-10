@@ -14,7 +14,7 @@ export function Data() {
 
   return (
     <SimpleGrid
-      bgColor="dim"
+      bgColor="eerie"
       px={[4, 32, 32, 8, 32]}
       pt={[16, 16, 16, 48, 48]}
       pb={[16, 16, 16, 28, 28]}
@@ -30,7 +30,7 @@ export function Data() {
         <>
           <Box
             position="absolute"
-            top="20%"
+            top="36%"
             transform="translateY(20%)"
             left="calc(8rem + ((100vw - 16rem)/4))"
             w="0.5px"
@@ -39,7 +39,7 @@ export function Data() {
           />
           <Box
             position="absolute"
-            top="20%"
+            top="36%"
             transform="translateY(20%)"
             left="calc(8rem + ((100vw - 16rem)/2))"
             w="0.5px"
@@ -48,7 +48,7 @@ export function Data() {
           />
           <Box
             position="absolute"
-            top="20%"
+            top="36%"
             transform="translateY(20%)"
             right="calc(8rem + ((100vw - 16rem)/4))"
             w="0.5px"
@@ -60,7 +60,7 @@ export function Data() {
       }
 
       {/* BLOCOS INICIAIS NUMÉRICOS */}
-      <Flex px={[0, 0, 0, 2, 10]} pb={[0, 0, 0, 10, 10]} textAlign={['center', 'center', 'center', 'end', 'end']} alignItems="center" direction="column">
+      {/* <Flex px={[0, 0, 0, 2, 10]} pb={[0, 0, 0, 10, 10]} textAlign={['center', 'center', 'center', 'end', 'end']} alignItems="center" direction="column">
         <Text
           fontSize={["2.875rem", "2.875rem", "2.875rem", "4rem", "4rem"]}
           lineHeight={["4rem", "4rem", "4rem", "5rem", "5rem"]}
@@ -155,7 +155,7 @@ export function Data() {
           gridColumnStart={1}
           gridColumnEnd={5}
         />
-      }
+      } */}
 
       {/* BLOCOS FINAIS COM TEXTOS REPRESENTATIVOS */}
 
