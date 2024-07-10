@@ -142,7 +142,7 @@ export function Feedbacks() {
         feedbackslist.map((feedback) => {
           return (
 
-            <Feedback feedback={feedback.feedback} patient={feedback.patient} role={feedback.role} />
+            <Feedback key={feedback.id} feedback={feedback.feedback} patient={feedback.patient} role={feedback.role} />
           )
         })
 
