@@ -28,19 +28,19 @@ export function Gallery() {
         <Flex
           direction="column"
           alignItems="start"
-          pr={[2, 2, 2, 32, 32]}
+          pr={[2, 2, 2, 32, 12]}
           maxW="40rem"
           color="light"
         >
           <Text fontSize="md" lineHeight="md" mb={1}>
-            ESPECIALIZAÇÕES
+            GALERIA
           </Text>
           <Heading
             color="light"
             size={isMobile ? 'md' : 'lg'}
-            text="O que oferecemos para você e sua saúde"
+            text="Um pouco do nosso espaço e o que fazemos"
             isHighlighted
-            highlightedText={['oferecemos', 'você', 'saúde']}
+            highlightedText={['nosso espaço', 'o que fazemos']}
           />
         </Flex>
         <Image src="/assets/marca.svg" alt="marca" h="7rem" />
@@ -75,31 +75,31 @@ export function Gallery() {
           onClick={() => { carouselIndex <= 0 ? setCarouselIndex(carouselLength - 1) : setCarouselIndex(carouselIndex - 1) }}
           alignItems="center"
           position="absolute"
-          left={["1rem","1rem","2rem","4rem","4rem"]}
+          left={["1rem", "1rem", "2rem", "4rem", "4rem"]}
           borderRadius="full"
           bgColor="rgba(254, 254, 254, 0.40)"
           _hover={{ bgColor: 'rgba(254, 254, 254, 0.60)' }}
           transition="all 0.2s ease"
           backdropFilter="auto"
           backdropBlur="5px"
-          p={[2,2,2,9,9]}
+          p={[2, 2, 2, 9, 9]}
           cursor="pointer"
         >
           <Icon as={MoveLeft} boxSize={8} color="eerie" />
         </Flex>
-        
+
         <Flex
           onClick={() => { carouselIndex >= carouselLength - 1 ? setCarouselIndex(0) : setCarouselIndex(carouselIndex + 1) }}
           alignItems="center"
           position="absolute"
-          right={["1rem","1rem","2rem","4rem","4rem"]}
+          right={["1rem", "1rem", "2rem", "4rem", "4rem"]}
           borderRadius="full"
           bgColor="rgba(254, 254, 254, 0.40)"
           _hover={{ bgColor: 'rgba(254, 254, 254, 0.60)' }}
           transition="all 0.2s ease"
           backdropFilter="auto"
           backdropBlur="5px"
-          p={[2,2,2,9,9]}
+          p={[2, 2, 2, 9, 9]}
           cursor="pointer"
         >
           <Icon as={MoveRight} boxSize={8} color="eerie" />
