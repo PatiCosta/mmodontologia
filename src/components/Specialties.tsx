@@ -45,22 +45,26 @@ export function Specialties() {
           divider={<Box h="0.5px" bgColor="silver" w="80%" />}
         >
           <Specialty
-            title="Odontologia Estética"
-            description="Especializada em procedimentos estéticos dentários como
-                clareamentos, facetas e lentes de contato dental para melhorar a
-                aparência do sorriso."
+            title="Prótese Dentária"
+            description="O objetivo da especialidade em Prótese Dentária é o restabelecimento e a manutenção das funções do sistema estomatognático, a fim de proporcionar conforto, estética e saúde pela recolocação dos dentes perdidos e dos tecidos contíguos."
           />
           <Specialty
-            title="Ortodontia"
-            description="Responsável por correções na posição dos dentes e da arcada dentária, utilizando aparelhos ortodônticos ou técnicas como a ortodontia invisível."
-          />
-          <Specialty
-            title="Harmonização Facial"
-            description="Voltada para procedimentos estéticos faciais como preenchimentos, botox e outras técnicas para melhorar a harmonia e rejuvenescimento facial."
+            title="Endodontia"
+            description="A Endodontia é a área da Odontologia que tem como objetivo a preservação do dente por meio de prevenção, diagnóstico, prognóstico, tratamento e controle das alterações da polpa e dos tecidos perirradiculares.
+            
+            As áreas de competência para atuação do especialista em Endodontia incluem: procedimentos conservadores da vitalidade pulpar, procedimentos cirúrgicos no tecido e na cavidade pulpares, procedimentos cirúrgicos para-endodônticos e tratamento dos traumatismos dentários."
           />
           <Specialty
             title="Implantodontia"
-            description="Especialidade que envolve a colocação de implantes dentários para substituir dentes ausentes e restaurar a função mastigatória e estética."
+            description="O profissional da área de Implantodontia é o responsável por viabilizar a instalação de implantes dentários, da própria cirurgia de instalação desses implantes e das próteses que são confeccionadas sobre estes dispositivos."
+          />
+          <Specialty
+            title="Cirurgia oral menor"
+            description="É uma especialidade da odontologia que abrange uma variedade de procedimentos cirúrgicos realizados na cavidade oral. Esses procedimentos são considerados de pequeno porte e geralmente podem ser realizados em consultório odontológico sob anestesia local."
+          />
+          <Specialty
+            title="Ortodontia"
+            description="E por fim, a Ortodontia é a especialidade que tem como objetivo a prevenção, a supervisão e a orientação do desenvolvimento do aparelho mastigatório e a devida correção das estruturas dento-faciais. São esses profissionais os responsáveis por indicação, aplicação e controle dos aparelhos mecanoterápicos e funcionais."
           />
         </VStack>
         {isMobile ?
@@ -74,7 +78,7 @@ export function Specialties() {
           />
           :
           ''}
-        <Flex alignItems="end" pl={[4,4,4,4,32]} pr={[4,4,4,4,20]} mt={[-16,-16,-16,0,0]} pt={[0,16,16,16,16]} bgColor={["none","none","none","dim","dim"]}>
+        <Flex alignItems="end" pl={[4, 4, 4, 4, 32]} pr={[4, 4, 4, 4, 20]} mt={[-16, -16, -16, 0, 0]} pt={[0, 16, 16, 16, 16]} bgColor={["none", "none", "none", "dim", "dim"]}>
           <ContactButton />
         </Flex>
       </Box>
@@ -115,7 +119,7 @@ export function Specialties() {
             :
 
             <Box
-              bgImage="/assets/botox2.png"
+              bgImage="/assets/dentist.png"
               bgPosition="center"
               bgSize="cover"
               w={["100%", "100%", "100%", "calc(100vw - (50vw + 8rem))", "calc(100vw - (50vw + 8rem))"]}
