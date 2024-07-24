@@ -16,32 +16,43 @@ export function Main() {
   return (
     <Flex
       alignItems="stretch"
-      direction={["column-reverse", "column-reverse","column-reverse", "column", "column"]}
+      direction={["column-reverse", "column-reverse", "column-reverse", "column", "column"]}
       gap={[4, 4, 4, 16, 16]}
       my={[8, 16, 16, 16, 16]}
-      px={[4, 4, 8, 12, 32]}>
-      
+      px={[4, 4, 8, 12, 32]}
+      >
+
 
       {/* Banners com contato */}
-      <Flex 
-      flexDir={['column-reverse','column-reverse', 'column-reverse', 'row', 'row']} 
-      w={['100%','100%' ,'100%', '', '']} 
-      gap={[0,0,0,6,6]} 
-      alignItems="end"
+      <Flex
+        flexDir={['column-reverse', 'column-reverse', 'column-reverse', 'row', 'row']}
+        w={['100%', '100%', '100%', '', '']}
+        gap={[0, 0, 0, 6, 6]}
+        alignItems="end"
+        
       >
 
         {/* CARD 1 */}
         {isMobile ?
-          <ContactButton isDark={true} />
+          <Flex flexDir={'column'} w='100%' gap={16} >
+            <ContactButton isDark={true} />
+            <Flex flexDir={'column'} gap={4} boxShadow={'0px 1px 4px 0px black'}>
+             
+            <iframe width="100%" height="636px" src="https://www.youtube.com/embed/3o5lMuedAj0?si=65fWIEjFruiQxjZY&autoplay=1&loop=1&playlist=3o5lMuedAj0" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
+           
+            </Flex>
+
+          </Flex>
           :
           // FOTO DO CONSULTORIO
+
           <Flex
             py={6}
-            px={[0, 0, 0, 0,8]}
+            px={[0, 0, 0, 0, 8]}
             bgImage="/assets/clinica_main.png"
             bgPosition="center"
             bgSize="cover"
-            w={["100%", "100%", "100%",  "calc((100vw - 16rem)/2)", "calc((100vw - 16rem)/3)"]}
+            w={["100%", "100%", "100%", "calc((100vw - 16rem)/2)", "calc((100vw - 16rem)/3)"]}
             h="432px"
             boxShadow="dark"
             direction="column"
@@ -66,6 +77,8 @@ export function Main() {
               </Text>
               <MoveRight size={24} color="#fefefe" />
             </Button>
+
+
           </Flex>
         }
         {/* CARD 2 */}
@@ -73,7 +86,7 @@ export function Main() {
           ''
           :
           <Flex
-            bgImage="/assets/yourSmileOurPassion.png"
+            // bgImage="/assets/yourSmileOurPassion.png"
             bgPosition="center"
             bgSize="cover"
             w={["100%", "100%", "100%", "calc((100vw - 16rem)/3)"]}
@@ -81,17 +94,21 @@ export function Main() {
             boxShadow="dark"
             direction="column"
             justifyContent="center"
-            px={32}
+            // px={32}
             gap={10}
           >
-            <Flex direction="column" alignItems="center">
+
+            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/3o5lMuedAj0?si=65fWIEjFruiQxjZY&autoplay=1&loop=1&playlist=3o5lMuedAj0"
+              title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
+
+            {/* <Flex direction="column" alignItems="center">
               <Heading color="eerie" size="xs" text="SEU" />
               <Heading color="light" size="xs" text="SORRISO" />
             </Flex>
             <Flex direction="column" alignItems="center">
               <Heading color="eerie" size="xs" text="NOSSA" />
               <Heading color="light" size="xs" text="PAIXÃO" />
-            </Flex>
+            </Flex> */}
           </Flex>
         }
         <Box
@@ -99,7 +116,7 @@ export function Main() {
           bgPosition={["right", "center", "center", "center", "center"]}
           bgRepeat={'no-repeat'}
           bgSize={["contain", "contain", "contain", "cover", "cover"]}
-          w={["100%", "100%", "100%", "calc((100vw - 17.5rem)/2)","calc((100vw - 17.5rem)/3)"]}
+          w={["100%", "100%", "100%", "calc((100vw - 17.5rem)/2)", "calc((100vw - 17.5rem)/3)"]}
           h={["360px", "360px", "432px", "432px", "432px"]}
           ml={[0, 0, 0, -12, -12]}
         />
@@ -107,7 +124,7 @@ export function Main() {
       </Flex>
 
       {/* Subtitulo e descrição promocional */}
-      <Flex flexDir={['column', 'column','column', 'row', 'row']} gap={[2, 2, 2, 20, 20]} alignItems={["start", "start", "start","end", "end"]}>
+      <Flex flexDir={['column', 'column', 'column', 'row', 'row']} gap={[2, 2, 2, 20, 20]} alignItems={["start", "start", "start", "end", "end"]}>
         <Heading
           size={isMobile ? "sm" : "lg"}
           fontSize={['1.75rem', '1.75rem', '1.75rem', '2.5rem', '2.5rem']}
@@ -115,13 +132,13 @@ export function Main() {
           color={"eerie"}
           isHighlighted
           highlightedText={['Realçando', 'já existe']}
-          textAlign={["start","start", "start", "start", "end"]}
+          textAlign={["start", "start", "start", "start", "end"]}
           pr={[4, 8, 8, 8, 0]}
         />
 
         <Flex direction="column" gap={4} alignItems={["start", "start", "start", "end", "end"]} pb={3}>
 
-          <Text fontSize={isMobile ? "md" : "lg"} lineHeight={isMobile ? "sm" : "lg"} textAlign={["start","start", "start", "end", "end"]} pr={[8, 8, 8, 0, 0]}>
+          <Text fontSize={isMobile ? "md" : "lg"} lineHeight={isMobile ? "sm" : "lg"} textAlign={["start", "start", "start", "end", "end"]} pr={[8, 8, 8, 0, 0]}>
             Descubra a arte da harmonização facial e do sorriso perfeito
             conosco, onde a beleza e a saúde se unem para transformar vidas.
           </Text>
