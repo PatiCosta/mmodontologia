@@ -34,7 +34,19 @@ export function Specialties() {
   })
 
   return (
-    <Flex alignItems="stretch" mt={28} gap={12} flexDir={['column-reverse', 'column-reverse', 'column-reverse', 'row', 'row']} zIndex="docked" position="relative">
+    <Flex
+      id="#especializações"
+      alignItems="stretch"
+      mt={28}
+      gap={12}
+      flexDir={['column-reverse',
+        'column-reverse',
+        'column-reverse',
+        'row',
+        'row']}
+      zIndex="docked"
+      position="relative">
+
       <Box flex="1">
         <VStack
           pl={[2, 2, 2, 2, 32]}
@@ -108,7 +120,7 @@ export function Specialties() {
         </Flex>
         <Box mt={10} h="100%">
           <Box
-            bgImage="/assets/botox.png"
+            bgImage="/assets/consultorio.png"
             bgPosition="center"
             bgSize="cover"
             w={["100%", "100%", "100%", "calc(100vw - (50vw + 8rem))", "calc(100vw - (50vw + 8rem))"]}

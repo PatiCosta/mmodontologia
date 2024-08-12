@@ -11,5 +11,4 @@ export const carouselPics = [
     "/assets/carousel/carousel-8.png",
     "/assets/carousel/carousel-9.png",
     "/assets/carousel/carousel-10.png",
-    "/assets/carousel/carousel-11.png",
 ]

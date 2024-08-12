@@ -13,7 +13,7 @@ export function Me() {
   })
 
   return (
-    <Flex mt={28} gap={[8, 8, 8, 8, 20]} pl={[4, 4, 4, 0, 0]} pr={[4, 4, 4, 4, 32]} alignItems="stretch" flexDir={['column', 'column', 'column', 'row', 'row']}>
+    <Flex mt={[8,8,8,28,28]} gap={[8, 8, 8, 8, 20]} pl={[4, 4, 4, 0, 0]} pr={[4, 4, 4, 4, 32]} alignItems="stretch" flexDir={['column', 'column', 'column', 'row', 'row']}>
 
       <Grid h={["360px", "360px", "360px", "initial", 'initial']} templateColumns="1fr 1fr" gap={6} minW="calc(100vw - 40rem)">
         <GridItem
@@ -24,7 +24,7 @@ export function Me() {
           w={'100%'}
         />
         <GridItem
-          bgImage="/assets/marina3.png"
+          bgImage="/assets/marina2.png"
           rowSpan={2}
           bgPos="center"
           bgSize="cover"
@@ -32,7 +32,7 @@ export function Me() {
           w={'100%'}
         />
         <GridItem
-          bgImage="/assets/marina2.png"
+          bgImage="/assets/marina3.png"
           bgPos="bottom"
           bgSize="cover"
           h={'100%'}

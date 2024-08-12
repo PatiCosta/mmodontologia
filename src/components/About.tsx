@@ -14,10 +14,11 @@ export function About() {
 
   return (
     <Flex
+      id="#sobrenós"
       zIndex="docked"
       alignItems="end"
       position="relative"
-      mt={['10vh', 20, 20, 20, 20]}
+      mt={['5vh', 20, 20, 20, 20]}
       px={[0, 8, 8, 0, 0]}
       flexDir={['column', 'column', 'column', 'row', 'row']}
     >

@@ -29,7 +29,7 @@ export function ModalMenu({
                 right='0'
                 top={10}
                 w='50px'
-                mr={[8,4,12,'','']}
+                mr={[8, 4, 12, '', '']}
                 fontSize='1.6rem'
                 bgColor='eerie'
                 color='light'
@@ -62,11 +62,11 @@ export function ModalMenu({
                         justifyContent='center'
                     >
 
-                        <MenuButton title="SOBRE NÓS" />
-                        <MenuButton title="ESPECIALIZAÇÕES" />
-                        <MenuButton title="GALERIA" />
-                        <MenuButton title="DEPOIMENTOS" />
-                        <MenuButton title="ENDEREÇO" />
+                        <MenuButton id="#sobrenós" title="SOBRE NÓS" />
+                        <MenuButton id="#especializações" title="ESPECIALIZAÇÕES" />
+                        <MenuButton id="#galeria" title="GALERIA" />
+                        <MenuButton id="#depoimentos" title="DEPOIMENTOS" />
+                        <MenuButton id="#endereço" title="ENDEREÇO" />
 
                         <Flex mx='auto' gap={2}>
                             <InstagramLogo

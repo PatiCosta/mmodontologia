@@ -56,6 +56,7 @@ export function Feedbacks() {
 
   return (
     <Grid
+      id="#depoimentos"
       templateColumns={["1fr", "1fr", "1fr", "1fr 1fr 1fr", "1fr 1fr 1fr"]}
       rowGap={10}
       columnGap={6}
@@ -75,7 +76,7 @@ export function Feedbacks() {
           </Text>
           <Heading
             color="battleship"
-            size={isMobile? "md":"lg" }
+            size={isMobile ? "md" : "lg"}
             text="O que nossos pacientes têm a dizer?"
             isHighlighted
             highlightedText={['nossos', 'pacientes', 'dizer']}
@@ -100,7 +101,7 @@ export function Feedbacks() {
             alignItems="center"
             position="absolute"
             left={["0.4rem", "0.4rem", "0.4rem", "4rem", "4rem"]}
-            top={[420,420,264,0,0]}
+            top={[420, 420, 264, 0, 0]}
             borderRadius="full"
             bgColor="battleship"
             _hover={{ bgColor: 'silver' }}
@@ -124,7 +125,7 @@ export function Feedbacks() {
             alignItems="center"
             position="absolute"
             right={["0.4rem", "0.4rem", "0.4rem", "4rem", "4rem"]}
-            top={[420,420,264,0,0]}
+            top={[420, 420, 264, 0, 0]}
             borderRadius="full"
             bgColor="battleship"
             _hover={{ bgColor: 'silver' }}

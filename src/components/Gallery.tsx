@@ -21,7 +21,7 @@ export function Gallery() {
   const [carouselBarSize, setCarouselBarSize] = useState(100 / carouselLength)
 
   return (
-    <Box bgColor="dim" pt={[4, 4, 4, 28, 28]} pb={28} mt={-28} >
+    <Box id="#galeria" bgColor="dim" pt={[4, 4, 4, 28, 28]} pb={28} mt={-28} >
       <Box h="0.5px" w="calc(100% - 16rem)" mx={[0, 0, 0, 32, 32]} mt={20} bgColor="dim" />
 
       <Flex alignItems="center" flexDir={['column-reverse', 'column-reverse', 'column-reverse', 'row', 'row']} justifyContent="space-between" mx={[4, 4, 4, 32, 32]} mt={16} gap={[12, 12, 12, 0, 0]}>
