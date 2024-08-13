@@ -1,4 +1,4 @@
-import { useDisclosure, Button, Collapse, VStack, HStack, Box, Flex } from "@chakra-ui/react"
+import { useDisclosure, Button, Collapse, VStack, HStack, Box, Flex, Link } from "@chakra-ui/react"
 import { InstagramLogo, WhatsappLogo } from "phosphor-react"
 import { Dispatch, SetStateAction } from "react"
 import { BsInstagram } from "react-icons/bs"
@@ -69,22 +69,36 @@ export function ModalMenu({
                         <MenuButton id="#endereço" title="ENDEREÇO" />
 
                         <Flex mx='auto' gap={2}>
-                            <InstagramLogo
-                                weight="duotone"
-                                size={40}
-                                color={instagramFocus ? 'transparent' : '#96928B'}
-                                style={{ cursor: 'pointer' }}
-                                onMouseEnter={() => setInstagramFocus(true)}
-                                onMouseLeave={() => setInstagramFocus(false)}
-                            />
-                            <WhatsappLogo
-                                weight="duotone"
-                                size={40}
-                                color={whatsappFocus ? '#25D366' : '#96928B'}
-                                style={{ cursor: 'pointer' }}
-                                onMouseEnter={() => setWhatsappFocus(true)}
-                                onMouseLeave={() => setWhatsappFocus(false)}
-                            />
+                            <Link
+                                href='https://www.instagram.com/dramarinamaragno?igsh=MXkxbnI0NG52N2lo'
+                                target='_blank'
+                                color={'#96928B'}
+                                cursor={'pointer'}
+                                _hover={{ textDecoration: 'none', color: 'pink.500', transition: '300ms' }}
+                            >
+                                <InstagramLogo
+                                    weight="duotone"
+                                    size={40}
+                                    style={{ cursor: 'pointer' }}
+                                // onMouseEnter={() => setInstagramFocus(true)}
+                                // onMouseLeave={() => setInstagramFocus(false)}
+                                />
+                            </Link>
+                            <Link
+                                href='https://wa.me/5548999600383?text=Olá, acessei o site da MMOdontologia e gostaria de mais informações'
+                                target='_blank'
+                                color={'#96928B'}
+                                cursor={'pointer'}
+                                _hover={{ textDecoration: 'none', color: 'green.400', transition: '300ms' }}
+                            >
+                                <WhatsappLogo
+                                    weight="duotone"
+                                    size={40}
+                                    style={{ cursor: 'pointer' }}
+                                // onMouseEnter={() => setWhatsappFocus(true)}
+                                // onMouseLeave={() => setWhatsappFocus(false)}
+                                />
+                            </Link>
 
                         </Flex>
                     </Flex>
