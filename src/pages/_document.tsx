@@ -17,8 +17,8 @@ export default function Document() {
 
         {/* <!-- Twitter Meta Tags --> */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta property="twitter:domain" content="clubedopassaporte.com" />
-        <meta property="twitter:url" content="http://www.dramarinamaragno.com.br//" />
+        <meta property="twitter:domain" content="dramarinamaragno.com.br" />
+        <meta property="twitter:url" content="http://www.dramarinamaragno.com.br/" />
         <meta name="twitter:title" content="MMOdontologia - Realçando a beleza que já existe em você." />
         <meta name="twitter:description" content="Realçando a beleza que já existe em você." />
         <meta name="twitter:image" content="http://www.dramarinamaragno.com.br/assets/logo.svg" />
