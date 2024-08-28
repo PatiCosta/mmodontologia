@@ -125,26 +125,35 @@ export function Specialties() {
             highlightedText={['oferecemos', 'você', 'saúde']}
           />
         </Flex>
-        <Box mt={10} h="100%">
+        <Box mt={10} h="100%" pb={0}>
           <Box
             bgImage="/assets/specialties/consultorio.png"
             bgPosition="center"
             bgSize="cover"
             w={["100%", "100%", "100%", "calc(100vw - (50vw + 8rem))", "calc(100vw - (50vw + 8rem))"]}
-            h={["264px", "264px", "264px", "calc((100%/2) - 0.75rem)", "calc((100%/2) - 0.75rem)"]}
+            h={["264px", "264px", "264px", "calc((100%/2) - 0.75rem)", "calc((100%/2.5) - 0.75rem)"]}
           />
           {isMobile ?
             ''
             :
-
-            <Box
-              bgImage="/assets/specialties/invisalign.png"
-              bgPosition="center"
-              bgSize="cover"
-              w={["100%", "100%", "100%", "calc(100vw - (50vw + 8rem))", "calc(100vw - (50vw + 8rem))"]}
-              h={["264px", "264px", "264px", "calc((100%/2) - 0.75rem)", "calc((100%/2) - 0.75rem)"]}
-              mt={6}
-            />
+            <>
+              <Box
+                bgImage="/assets/specialties/dentist.png"
+                bgPosition="center"
+                bgSize="cover"
+                w={["100%", "100%", "100%", "calc(100vw - (50vw + 8rem))", "calc(100vw - (50vw + 8rem))"]}
+                h={["264px", "264px", "264px", "calc((100%/2) - 0.75rem)", "calc((100%/3) - 0.75rem)"]}
+                mt={6}
+              />
+              <Box
+                bgImage="/assets/specialties/invisalign.png"
+                bgPosition="center"
+                bgSize="cover"
+                w={["100%", "100%", "100%", "calc(100vw - (50vw + 8rem))", "calc(100vw - (50vw + 8rem))"]}
+                h={["264px", "264px", "264px", "calc((100%/2) - 0.75rem)", "calc((100%/4) - 0.75rem)"]}
+                mt={6}
+              />
+            </>
           }
         </Box>
       </Flex>
