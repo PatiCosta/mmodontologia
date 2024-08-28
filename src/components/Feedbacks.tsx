@@ -1,4 +1,4 @@
-import { Avatar, Box, Flex, Grid, Icon, Text, useBreakpointValue } from '@chakra-ui/react'
+import { Avatar, Box, Flex, Grid, Icon, Image, Text, useBreakpointValue } from '@chakra-ui/react'
 import { Heading } from './Heading'
 import { ChatsTeardrop, Quotes } from 'phosphor-react'
 
@@ -7,7 +7,7 @@ import { use, useState } from 'react'
 import { carouselPics } from './helpers/carousel'
 import { feedbackslist } from './helpers/feedbacks'
 
-function Feedback({ feedback, patient, role }: { feedback: string, patient: string, role: string }) {
+function Feedback({ feedback, patient, imageURL }: { feedback: string, patient: string, imageURL: string }) {
   return (
     <Flex
       direction="column"
@@ -25,15 +25,21 @@ function Feedback({ feedback, patient, role }: { feedback: string, patient: stri
       <Text fontSize="lg" lineHeight="lg">
         {feedback}
       </Text>
-      <Flex alignItems="center" gap={3} justifyContent="center">
-        <Avatar size="md" name="Rita Thiel" src="https://bit.ly/broken-link" />
+      <Flex alignItems="center" gap={3} justifyContent="start">
+
+        {imageURL == '' ?
+          <Avatar size="md" name="" bgColor={'battleship'} src="https://bit.ly/broken-link" />
+          :
+          <Image boxSize={12} src={imageURL} />
+        }
+
         <Box>
           <Text fontSize="lg" lineHeight="lg" color="battleship">
             {patient}
           </Text>
-          <Text fontSize="md" lineHeight="md" color="eerie">
-            {role}
-          </Text>
+          {/* <Text fontSize="md" lineHeight="md" color="eerie">
+            {imageURL}
+          </Text> */}
         </Box>
       </Flex>
     </Flex>
@@ -117,7 +123,7 @@ export function Feedbacks() {
           <Feedback
             feedback={feedbackslist[feedbackIndex].feedback}
             patient={feedbackslist[feedbackIndex].patient}
-            role={feedbackslist[feedbackIndex].role}
+            imageURL={feedbackslist[feedbackIndex].imageURL}
           />
 
           <Flex
@@ -143,7 +149,7 @@ export function Feedbacks() {
         feedbackslist.map((feedback) => {
           return (
 
-            <Feedback key={feedback.id} feedback={feedback.feedback} patient={feedback.patient} role={feedback.role} />
+            <Feedback key={feedback.id} feedback={feedback.feedback} patient={feedback.patient} imageURL={feedback.imageURL} />
           )
         })
 

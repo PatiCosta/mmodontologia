@@ -120,7 +120,7 @@ export function Specialties() {
         </Flex>
         <Box mt={10} h="100%">
           <Box
-            bgImage="/assets/consultorio.png"
+            bgImage="/assets/specialties/consultorio.png"
             bgPosition="center"
             bgSize="cover"
             w={["100%", "100%", "100%", "calc(100vw - (50vw + 8rem))", "calc(100vw - (50vw + 8rem))"]}
@@ -131,7 +131,7 @@ export function Specialties() {
             :
 
             <Box
-              bgImage="/assets/dentist.png"
+              bgImage="/assets/specialties/invisalign.png"
               bgPosition="center"
               bgSize="cover"
               w={["100%", "100%", "100%", "calc(100vw - (50vw + 8rem))", "calc(100vw - (50vw + 8rem))"]}
