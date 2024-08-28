@@ -57,28 +57,35 @@ export function Specialties() {
           divider={<Box h="0.5px" bgColor="silver" w="80%" />}
         >
           <Specialty
-            title="Prótese Dentária"
-            description="O objetivo da especialidade em Prótese Dentária é o restabelecimento e a manutenção das funções do sistema estomatognático, a fim de proporcionar conforto, estética e saúde pela recolocação dos dentes perdidos e dos tecidos contíguos."
+            title="Harmonização Orofacial"
+            description="A harmonização orofacial é um conjunto de procedimentos estéticos que visam equilibrar as proporções do rosto, proporcionando um sorriso mais harmônico e rejuvenescendo a aparência. Através de técnicas como aplicação de ácido hialurônico e botox, é possível corrigir assimetrias, aumentar o volume dos lábios, suavizar rugas e definir o contorno facial."
           />
           <Specialty
-            title="Endodontia"
-            description="A Endodontia é a área da Odontologia que tem como objetivo a preservação do dente por meio de prevenção, diagnóstico, prognóstico, tratamento e controle das alterações da polpa e dos tecidos perirradiculares.
-            
-            As áreas de competência para atuação do especialista em Endodontia incluem: procedimentos conservadores da vitalidade pulpar, procedimentos cirúrgicos no tecido e na cavidade pulpares, procedimentos cirúrgicos para-endodônticos e tratamento dos traumatismos dentários."
+            title="Implantes Dentários"
+            description="Os implantes dentários são pequenas raízes artificiais de titânio que são colocadas no osso maxilar ou mandibular para substituir as raízes dos dentes perdidos. Sobre esses implantes, são colocadas coroas dentárias, pontes ou próteses, devolvendo a função mastigatória e a estética do sorriso."
           />
           <Specialty
-            title="Implantodontia"
-            description="O profissional da área de Implantodontia é o responsável por viabilizar a instalação de implantes dentários, da própria cirurgia de instalação desses implantes e das próteses que são confeccionadas sobre estes dispositivos."
+            title="Lentes de Contato Dental"
+            description="As lentes de contato dental são finas lâminas de porcelana ou resina compostas que são coladas na superfície dos dentes, proporcionando um sorriso mais branco, alinhado e perfeito. Elas são indicadas para corrigir pequenas imperfeições, como manchas, espaços entre os dentes e desgastes."
           />
           <Specialty
-            title="Cirurgia oral menor"
-            description="É uma especialidade da odontologia que abrange uma variedade de procedimentos cirúrgicos realizados na cavidade oral. Esses procedimentos são considerados de pequeno porte e geralmente podem ser realizados em consultório odontológico sob anestesia local."
+            title="Clareamento e Estética Dental"
+            description="O clareamento dental é um tratamento estético que visa remover manchas e devolver a brancura natural dos dentes. Já a estética dental engloba uma série de procedimentos que visam melhorar a aparência do sorriso, como o uso de facetas de porcelana, resinas compostas e outros recursos."
           />
           <Specialty
-            title="Ortodontia"
-            description="E por fim, a Ortodontia é a especialidade que tem como objetivo a prevenção, a supervisão e a orientação do desenvolvimento do aparelho mastigatório e a devida correção das estruturas dento-faciais. São esses profissionais os responsáveis por indicação, aplicação e controle dos aparelhos mecanoterápicos e funcionais."
+            title="Alinhadores Invisíveis"
+            description="Os alinhadores invisíveis são uma alternativa aos aparelhos ortodônticos tradicionais. São placas transparentes e removíveis que corrigem problemas de alinhamento dos dentes de forma discreta e confortável."
+          />
+          <Specialty
+            title="Tratamento de Canal"
+            description="O tratamento de canal é um procedimento odontológico que visa salvar um dente que está com a polpa infeccionada ou inflamada. Durante o tratamento, a polpa do dente é removida e o canal radicular é limpo e obturado."
+          />
+          <Specialty
+            title="Exodontia de Terceiros Molares - Sisos"
+            description="A exodontia de terceiros molares, popularmente conhecidos como sisos, é a remoção cirúrgica desses dentes. A cirurgia é indicada quando os sisos estão causando dor, inflamação ou atrapalhando o alinhamento dos outros dentes."
           />
         </VStack>
+
         {isMobile ?
           <Box
             bgImage="/assets/botox2.png"
