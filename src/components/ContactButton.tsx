@@ -22,12 +22,13 @@ export function ContactButton({ isDark }: { isDark?: boolean }) {
         justifyContent="space-between"
         w="100%"
         py={6}
-        px={10}
+        px={8}
         bgColor={isDark ? 'eerie' : 'light'}
         _hover={{ transform: 'translateY(-4px)' }}
         transition="all 0.2s ease"
         borderRadius="full"
         boxShadow={isDark ? 'dark' : 'light'}
+        gap={12}
       >
         <Text color={isDark ? 'light' : 'eerie'} fontWeight="thin">
           Entre em contato conosco
