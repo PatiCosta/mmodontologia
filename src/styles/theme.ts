@@ -18,6 +18,8 @@ export const theme = extendBaseTheme({
     silver: '#B1B1AE',
     eerie: '#202222',
     light: '#FEFEFE',
+    whatsapp:'#25d366',
+    instagram:'#C13584'
   },
   radii: {
     none: '0',

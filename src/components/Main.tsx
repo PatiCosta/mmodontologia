@@ -43,7 +43,7 @@ export function Main() {
             {/* YOUTUBE MOBILE */}
             <Flex flexDir={'column'} gap={4} boxShadow={'0px 1px 4px 0px black'} borderRadius={8}>
 
-              <iframe width="100%" height="398px" src="https://www.youtube.com/embed/Ci4TZZ9JdG8?si=0Voyal17XJyMFi5Z&autoplay=1&loop=1" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" style={{ borderRadius: 8 }}></iframe>
+              <iframe width="100%" height="398px" src="https://www.youtube.com/embed/OcSoSanmS9E?si=-R80BmWTJrtVo_aH&autoplay=1&loop=1" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" style={{ borderRadius: 8 }}></iframe>
 
             </Flex>
             <Flex direction="column" gap={4} alignItems={["start", "start", "start", "end", "end"]} py={2}>
@@ -114,7 +114,7 @@ export function Main() {
               gap={10}
             >
 
-              <iframe width="100%" height="640px" src="https://www.youtube.com/embed/Ci4TZZ9JdG8?si=0Voyal17XJyMFi5Z&autoplay=1&loop=1"
+              <iframe width="100%" height="640px" src="https://www.youtube.com/embed/OcSoSanmS9E?si=-R80BmWTJrtVo_aH&autoplay=1&loop=1"
                 title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
 
               {/* <Flex direction="column" alignItems="center">

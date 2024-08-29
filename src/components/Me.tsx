@@ -1,6 +1,7 @@
-import { Box, Flex, Grid, GridItem, Text, useBreakpointValue } from '@chakra-ui/react'
+import { Box, Flex, Grid, GridItem, Link, Text, useBreakpointValue } from '@chakra-ui/react'
 import { ContactButton } from './ContactButton'
 import { Heading } from './Heading'
+import { InstagramLogo } from 'phosphor-react'
 
 export function Me() {
 
@@ -58,12 +59,38 @@ export function Me() {
           <Text fontSize="lg" lineHeight="lg">
             A Dra. Marina, apaixonada por transformar sorrisos e vidas, lidera nossa equipe de especialistas. Formada pela Universidade Federal de Santa Catarina, sua paixão pela área a levou a construir uma carreira sólida, com foco em Harmonização Orofacial.
             <br></br> <br></br>
-            Seu currículo abrangente inclui diversas especializações e cursos em odontologia estética, ortodontia, harmonização facial e implantodontia. Além disso, a Dra. Marina possui Aperfeiçoamento em implantodontia e prótese, bem como em Cirurgia oral menor, garantindo um atendimento completo e personalizado aos pacientes.
+            Seu currículo abrangente inclui diversas especializações e cursos em odontologia estética, harmonização facial e implantodontia. Além disso, a Dra. Marina possui Aperfeiçoamento em implantodontia e prótese, bem como em Cirurgia oral menor, garantindo um atendimento completo e personalizado aos pacientes.
             <br></br> <br></br>
             Com vasta experiência e conhecimento, a Dra. Marina se dedica a oferecer resultados impecáveis, sempre atenta às necessidades e expectativas de cada indivíduo.
             <br></br> <br></br>
             Nossa clínica conta com uma equipe multidisciplinar de profissionais altamente qualificados, prontos para cuidar da sua saúde bucal em todas as áreas. Oferecemos desde os tratamentos mais tradicionais até as técnicas mais avançadas, sempre com foco no seu bem-estar e satisfação.
           </Text>
+          <Link
+          href='https://www.instagram.com/dramarinamaragno?igsh=MXkxbnI0NG52N2lo '
+          color={'white'}
+          cursor={'pointer'}
+          target='_blank'
+        >
+          <Flex gap={2} alignItems={'center'} justify={'center'}>
+            <Flex
+              borderRadius="full"
+              border="1px solid"
+              borderColor="white"
+              bgColor={'instagram'}
+              p={2}
+              cursor="pointer"
+
+              alignItems={'center'}
+              justifyContent={'center'}
+              flexDir={'column'}
+
+              _hover={{ textDecoration: 'none', color: 'instagram', bgColor: "white", transition: '300ms', borderColor: 'instagram' }}
+            >
+              <InstagramLogo weight="duotone" size={24} />
+            </Flex>
+            <Text color='eerie'> Dra. Marina Maragno</Text>
+          </Flex>
+        </Link>
         </Flex>
         <Flex alignItems="end" pt={16}>
           <ContactButton isDark />

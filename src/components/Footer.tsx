@@ -1,5 +1,6 @@
 import { Box, Flex, Image, Link, Text } from '@chakra-ui/react'
 import { InstagramLogo, WhatsappLogo } from 'phosphor-react'
+import { FaWhatsapp } from 'react-icons/fa'
 
 export function Footer() {
   return (
@@ -21,39 +22,83 @@ export function Footer() {
 
         <Link
           href='https://wa.me/5548999600383?text=Olá, acessei o site da MMOdontologia e gostaria de mais informações'
-          color={'#B1B1AE'}
+          color={'white'}
           cursor={'pointer'}
           target='_blank'
         >
-          <Box
-            borderRadius="full"
-            border="1px solid"
-            borderColor="silver"
-            p={3}
-            cursor="pointer"
-            _hover={{ textDecoration: 'none', color: 'green.500', transition: '300ms', borderColor: 'green.500' }}
-          >
-            <WhatsappLogo weight="duotone" size={32} />
-          </Box>
+          <Flex flexDir={'column'} gap={2} alignItems={'center'} justify={'center'}>
+            <Flex
+              borderRadius="full"
+              border="1px solid"
+              bgColor={'whatsapp'}
+              p={3}
+              cursor="pointer"
+
+              alignItems={'center'}
+              justifyContent={'center'}
+              flexDir={'column'}
+
+              _hover={{ textDecoration: 'none', color: 'whatsapp', bgColor: 'white', transition: '500ms', borderColor: 'green.500' }}
+            >
+              <FaWhatsapp size={32} />
+            </Flex>
+            <Text color='white'> WhatsApp </Text>
+          </Flex>
         </Link>
 
         <Link
-          href='https://www.instagram.com/dramarinamaragno?igsh=MXkxbnI0NG52N2lo'
-          color={'#B1B1AE'}
+          href='https://www.instagram.com/dramarinamaragno?igsh=MXkxbnI0NG52N2lo '
+          color={'white'}
           cursor={'pointer'}
           target='_blank'
         >
-          <Box
-            borderRadius="full"
-            border="1px solid"
-            borderColor="silver"
-            p={3}
-            cursor="pointer"
-            _hover={{ textDecoration: 'none', color: 'pink.500', transition: '300ms', borderColor: 'pink.500' }}
-          >
-            <InstagramLogo weight="duotone" size={32} />
-          </Box>
+          <Flex flexDir={'column'} gap={2} alignItems={'center'} justify={'center'}>
+            <Flex
+              borderRadius="full"
+              border="1px solid"
+              borderColor="white"
+              bgColor={'instagram'}
+              p={3}
+              cursor="pointer"
+
+              alignItems={'center'}
+              justifyContent={'center'}
+              flexDir={'column'}
+
+              _hover={{ textDecoration: 'none', color: 'instagram', bgColor: "white", transition: '300ms', borderColor: 'instagram' }}
+            >
+              <InstagramLogo weight="duotone" size={32} />
+            </Flex>
+            <Text color='white'> Dra. Marina Maragno</Text>
+          </Flex>
         </Link>
+        <Link
+          href='https://www.instagram.com/mmodontologiaeharmonizacao/'
+          color={'white'}
+          cursor={'pointer'}
+          target='_blank'
+        >
+          <Flex flexDir={'column'} gap={2} alignItems={'center'} justify={'center'}>
+            <Flex
+              borderRadius="full"
+              border="1px solid"
+              borderColor="white"
+              bgColor={'instagram'}
+              p={3}
+              cursor="pointer"
+
+              alignItems={'center'}
+              justifyContent={'center'}
+              flexDir={'column'}
+
+              _hover={{ textDecoration: 'none', color: 'instagram', bgColor: "white", transition: '300ms', borderColor: 'instagram' }}
+            >
+              <InstagramLogo weight="duotone" size={32} />
+            </Flex>
+            <Text color='white'> Clínica</Text>
+          </Flex>
+        </Link>
+
       </Flex>
       <Flex mt={20} mb={6} alignItems="center" gap="px">
         <Text fontSize="md" lineHeight="md" color="light">

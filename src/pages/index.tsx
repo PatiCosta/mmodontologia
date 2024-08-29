@@ -9,6 +9,7 @@ import { Main } from '@/components/Main'
 import { MainAlternativa } from '@/components/MainAlternativa'
 import { Me } from '@/components/Me'
 import { Specialties } from '@/components/Specialties'
+import WhatsButton from '@/components/WhatsButton'
 import { Flex, useBreakpointValue } from '@chakra-ui/react'
 
 export default function Home() {
@@ -27,6 +28,7 @@ export default function Home() {
       <Feedbacks />
       <Location />
       <Footer />
+      <WhatsButton />
     </>
   )
 }

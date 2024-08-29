@@ -1,5 +1,7 @@
-import { Box, Flex, Text } from '@chakra-ui/react'
+import { Box, Flex, Link, Text } from '@chakra-ui/react'
 import { Heading } from './Heading'
+import { BsTelephone, BsTelephoneFill } from 'react-icons/bs'
+import { RiWhatsappFill } from 'react-icons/ri'
 
 export function Location() {
   return (
@@ -30,9 +32,46 @@ export function Location() {
               highlightedText={['Onde', 'encontrar']}
             />
           </Box>
-          <Text fontSize="lg" lineHeight="lg" color="light">
-            Rua Crispim Mira, 110, Florianópolis, Santa Catarina 88020540
-          </Text>
+
+          <Flex flexDir={'column'} gap={2}>
+
+            <Text fontSize="lg" lineHeight="lg" color="light">
+              Hantei Office Building
+            </Text>
+            <Text fontSize="lg" lineHeight="lg" color="light">
+              Rua Crispim Mira, 110, Florianópolis, Santa Catarina, 88020-540 - Sala 1104 - Bloco B
+            </Text>
+
+            <Flex fontSize="lg" lineHeight="lg" color="light">
+              <Link
+                href="https://wa.me/+5548999600383?text=Olá, acessei o site da MMOdontologia e gostaria de mais informações'"
+                _hover={{ textDecoration: 'none', color: 'pink.200', transition: '300ms', borderColor: 'pink.200' }}
+                cursor={'pointer'}
+                target='_blank'
+                isExternal
+              >
+                <Flex alignItems={'center'} gap={2}>
+
+                  <RiWhatsappFill size={20} />
+                  <Text> (48) 999600383 </Text>
+                </Flex>
+              </Link>
+            </Flex>
+
+            <Flex fontSize="lg" lineHeight="lg" color="light">
+              <Link
+                href={'tel:+554832493276'}
+                _hover={{ textDecoration: 'none', color: 'pink.200', transition: '300ms', borderColor: 'pink.200' }}
+                cursor={'pointer'}
+              >
+                <Flex alignItems={'center'} gap={2}>
+                  <BsTelephoneFill size={20} color={'blue.500'} />
+                  <Text>(48) 3249-3276</Text>
+                </Flex>
+              </Link>
+            </Flex>
+
+          </Flex>
         </Flex>
         <Box
           w={[
