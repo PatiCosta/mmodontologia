@@ -15,7 +15,7 @@ export function About() {
   return (
     <Flex
       id="#sobrenós"
-      zIndex="docked"
+      // zIndex="docked"
       alignItems="end"
       position="relative"
       mt={['5vh', 20, 20, 20, 20]}

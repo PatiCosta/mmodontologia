@@ -44,7 +44,7 @@ export function Specialties() {
         'column-reverse',
         'row',
         'row']}
-      zIndex="docked"
+      // zIndex="docked"
       position="relative">
 
       <Box flex="1">

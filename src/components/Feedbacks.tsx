@@ -68,7 +68,7 @@ export function Feedbacks() {
       columnGap={6}
       px={[8, 8, 8, 8, 32]}
       mt={28}
-      zIndex="dropdown"
+      // zIndex="dropdown"
       position="relative"
     >
       <Flex
