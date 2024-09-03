@@ -48,10 +48,11 @@ export function Specialties() {
       position="relative">
 
       <Box flex="1">
+
         <VStack
           pl={[2, 2, 2, 2, 32]}
-          pr={[4, 4, 4, 0, 0]}
-          mb={16}
+          pr={[2, 2, 2, 0, 0]}
+          mb={[0, 0, 16, 16, 16]}
           mr={[0, 0, 0, 20, 20]}
           spacing={6}
           divider={<Box h="0.5px" bgColor="silver" w="80%" />}
@@ -84,7 +85,22 @@ export function Specialties() {
             title="Exodontia de Terceiros Molares - Sisos"
             description="A exodontia de terceiros molares, popularmente conhecidos como sisos, é a remoção cirúrgica desses dentes. A cirurgia é indicada quando os sisos estão causando dor, inflamação ou atrapalhando o alinhamento dos outros dentes."
           />
+
+
+        {isMobile ?
+          <Box
+            bgImage="/assets/specialties/invisalign.png"
+            bgPosition="center"
+            bgSize="cover"
+            w='100%'
+            h={["264px", "264px", "264px", "calc((100%/2) - 0.75rem)", "calc((100%/4) - 0.75rem)"]}
+            mt={6}
+            mx='auto'
+          />
+          :
+          ''}
         </VStack>
+
 
         {isMobile ?
           <Box
@@ -93,11 +109,10 @@ export function Specialties() {
             bgSize="cover"
             w={["100%", "100%", "100%", "calc(100vw - (50vw + 8rem))", "calc(100vw - (50vw + 8rem))"]}
             h={["264px", "264px", "264px", "calc((100%/2) - 0.75rem)", "calc((100%/2) - 0.75rem)"]}
-            mt={6}
           />
           :
           ''}
-        <Flex alignItems="end" pl={[4, 4, 4, 4, 32]} pr={[4, 4, 4, 4, 20]} mt={[-16, -16, -16, 0, 0]} pt={[0, 16, 16, 16, 16]} bgColor={["none", "none", "none", "dim", "dim"]}>
+        <Flex alignItems="end" pl={[4, 4, 4, 4, 32]} pr={[4, 4, 4, 4, 20]} mt={[-60, -16, -16, 0, 0]} pt={[0, 16, 16, 16, 16]} bgColor={["none", "none", "none", "dim", "dim"]}>
           <ContactButton />
         </Flex>
       </Box>
