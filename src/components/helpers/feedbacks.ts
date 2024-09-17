@@ -39,7 +39,7 @@ export const feedbackslist = [
     },
     {
         id:7,
-        feedback:'Faço botox com Marina faz 3 anos já, e cada x amo mais e mais! As mãos dela são leves e sempre com um atendimento impecável! Uma excelente profissional e um lindo ser humano ❤️',
+        feedback:'Faço procedimentos com Marina faz 3 anos já, e cada x amo mais e mais! As mãos dela são leves e sempre com um atendimento impecável! Uma excelente profissional e um lindo ser humano ❤️',
         patient: 'Maria Ribeiro Sombrio',
         imageURL:'https://lh3.googleusercontent.com/a-/ALV-UjUx9lnb6x38_vn4EUYA33z08guPor_wRyZrn5NoHf9x2BZ36o7N=w75-h75-p-rp-mo-br100'
     },
