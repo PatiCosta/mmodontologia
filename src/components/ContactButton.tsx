@@ -11,7 +11,7 @@ export function ContactButton({ isDark }: { isDark?: boolean }) {
   const bounceAnimation = `${bounce} 2s ease infinite`
   return (
     <Link
-      href='https://wa.me/5548999600383?text=Olá, acessei o site da MMOdontologia e gostaria de mais informações'
+      href='https://wa.me/5548996437416?text=Olá, acessei o site da MMOdontologia e gostaria de mais informações'
       target='_blank'
       cursor={'pointer'}
       _hover={{ textDecoration: 'none'}}

@@ -6,7 +6,7 @@ import { useState, useEffect } from "react";
 export default function WhatsButton() {
     
     return (
-        <Link className="zap-tag" target={'_blank'} href={'https://wa.me/+5548999600383?text=Olá, acessei o site da MMOdontologia e gostaria de mais informações'}>
+        <Link className="zap-tag" target={'_blank'} href={'https://wa.me/+5548996437416?text=Olá, acessei o site da MMOdontologia e gostaria de mais informações'}>
         
         <Flex zIndex={0} bg='#25D366' color="#fffafa"
         fontSize='1.8rem' borderRadius={'full'} p={4} 

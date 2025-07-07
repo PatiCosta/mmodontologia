@@ -21,7 +21,7 @@ export function Footer() {
       <Flex mt={10} alignItems="center" justifyContent="center" gap={6}>
 
         <Link
-          href='https://wa.me/5548999600383?text=Olá, acessei o site da MMOdontologia e gostaria de mais informações'
+          href='https://wa.me/5548996437416?text=Olá, acessei o site da MMOdontologia e gostaria de mais informações'
           color={'white'}
           cursor={'pointer'}
           target='_blank'
