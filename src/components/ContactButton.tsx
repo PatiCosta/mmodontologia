@@ -1,14 +1,8 @@
-import { Button, Icon, Link, Text, keyframes } from '@chakra-ui/react'
+import { Button, Icon, Link, Text } from '@chakra-ui/react'
 import { MoveRight } from 'lucide-react'
 
-const bounce = keyframes`
-    0%, 20%, 50%, 80%, 100% {transform: translateX(0);}
-	40% {transform: translateX(-20px);}
-	60% {transform: translateX(-10px);}
-`
-
 export function ContactButton({ isDark }: { isDark?: boolean }) {
-  const bounceAnimation = `${bounce} 2s ease infinite`
+  
   return (
     <Link
       href='https://wa.me/5548996437416?text=Olá, acessei o site da MMOdontologia e gostaria de mais informações'
@@ -37,7 +31,6 @@ export function ContactButton({ isDark }: { isDark?: boolean }) {
           as={MoveRight}
           boxSize={5}
           color={isDark ? 'light' : 'dim'}
-          animation={bounceAnimation}
         />
       </Button>
     </Link>
