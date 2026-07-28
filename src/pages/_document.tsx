@@ -19,8 +19,8 @@ export default function Document() {
         {/* <!-- End Google Tag Manager --> */}
         
         {/* <!-- HTML Meta Tags --> */}
-        <meta name="description" content="Realçando a beleza que já existe em você." />
-        <meta name="keywords" content="Prótese Dentária, Endodontia, Implantodontia, Cirurgia oral menor, Ortodontia" />
+        <meta name="description" content="Harmonização Orofacial em Florianópolis com a Dra. Marina Maragno. Realçando a beleza que já existe em você." />
+        <meta name="keywords" content="Harmonização Orofacial, Harmonização Facial, Preenchimento Labial, Toxina Botulínica, Bichectomia, Bioestimulador de Colágeno, Rinomodelação, Florianópolis" />
 
         {/* <!-- Facebook Meta Tags --> */}
         <meta property="og:url" content="http://www.dramarinamaragno.com.br/" />

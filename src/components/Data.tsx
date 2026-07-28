@@ -186,9 +186,9 @@ export function Data() {
           />
           <Box h="px" w="100%" bgColor="light" mb={1} />
         </Flex>
-        <Heading color="light" size={isMobile ? 'xs' : 'sm'} mx={['auto','auto','auto','','']} text="Equipe" />
+        <Heading color="light" size={isMobile ? 'xs' : 'sm'} mx={['auto','auto','auto','','']} text="Especialização" />
         <Text fontSize="lg" lineHeight="lg" color="light" textAlign={['center','center','center', 'start', 'start']}>
-          Profissionais especializados em odontologia e estética facial.
+          Formação e atualização constantes em harmonização orofacial e estética facial.
         </Text>
       </Flex>
 

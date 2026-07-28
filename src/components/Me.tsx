@@ -57,13 +57,20 @@ export function Me() {
             <Box h="0.5px" w={64} bgColor="silver" mt={[8, 8, 8, 14, 14]} />
           </Box>
           <Text fontSize="lg" lineHeight="lg">
-            A Dra. Marina, apaixonada por transformar sorrisos e vidas, lidera nossa equipe de especialistas. Formada pela Universidade Federal de Santa Catarina, sua paixão pela área a levou a construir uma carreira sólida, com foco em Harmonização Orofacial.
+            A Dra. Marina é apaixonada por realçar a beleza natural de cada
+            paciente através da Harmonização Orofacial. Formada pela
+            Universidade Federal de Santa Catarina, construiu uma carreira
+            sólida com foco em técnicas que valorizam a individualidade e
+            entregam resultados naturais.
             <br></br> <br></br>
-            Seu currículo abrangente inclui diversas especializações e cursos em odontologia estética, harmonização facial e implantodontia. Além disso, a Dra. Marina possui Aperfeiçoamento em implantodontia e prótese, bem como em Cirurgia oral menor, garantindo um atendimento completo e personalizado aos pacientes.
+            Seu currículo inclui especializações e cursos voltados à harmonização
+            facial e estética, com atualização constante nas técnicas mais
+            modernas da área. A dedicação em compreender o que cada paciente
+            deseja é a base do seu atendimento personalizado.
             <br></br> <br></br>
-            Com vasta experiência e conhecimento, a Dra. Marina se dedica a oferecer resultados impecáveis, sempre atenta às necessidades e expectativas de cada indivíduo.
-            <br></br> <br></br>
-            Nossa clínica conta com uma equipe multidisciplinar de profissionais altamente qualificados, prontos para cuidar da sua saúde bucal em todas as áreas. Oferecemos desde os tratamentos mais tradicionais até as técnicas mais avançadas, sempre com foco no seu bem-estar e satisfação.
+            Com sensibilidade estética e mão leve, a Dra. Marina se dedica a
+            oferecer resultados harmônicos, sempre atenta às expectativas e à
+            individualidade de cada rosto.
           </Text>
           <Link
           href='https://www.instagram.com/dramarinamaragno?igsh=MXkxbnI0NG52N2lo '

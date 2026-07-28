@@ -59,31 +59,27 @@ export function Specialties() {
         >
           <Specialty
             title="Harmonização Orofacial"
-            description="A harmonização orofacial é um conjunto de procedimentos estéticos que visam equilibrar as proporções do rosto, proporcionando um sorriso mais harmônico e rejuvenescendo a aparência. Através de técnicas como aplicação de ácido hialurônico, é possível corrigir assimetrias, aumentar o volume dos lábios, suavizar rugas e definir o contorno facial."
+            description="A harmonização orofacial é um conjunto de procedimentos estéticos que visam equilibrar as proporções do rosto, valorizando a beleza natural de cada paciente. Através de técnicas modernas, é possível corrigir assimetrias, suavizar rugas, definir o contorno facial e devolver a sensação de rejuvenescimento — sempre com resultados naturais."
           />
           <Specialty
-            title="Implantes Dentários"
-            description="Os implantes dentários são pequenas raízes artificiais de titânio que são colocadas no osso maxilar ou mandibular para substituir as raízes dos dentes perdidos. Sobre esses implantes, são colocadas coroas dentárias, pontes ou próteses, devolvendo a função mastigatória e a estética do sorriso."
+            title="Preenchimento Labial"
+            description="O preenchimento labial com ácido hialurônico realça o volume, o contorno e a hidratação dos lábios, respeitando a proporção do rosto. O resultado é natural, com lábios mais definidos e harmônicos — sem exageros."
           />
           <Specialty
-            title="Lentes de Contato Dental"
-            description="As lentes de contato dental são finas lâminas de porcelana ou resina compostas que são coladas na superfície dos dentes, proporcionando um sorriso mais branco, alinhado e perfeito. Elas são indicadas para corrigir pequenas imperfeições, como manchas, espaços entre os dentes e desgastes."
+            title="Toxina Botulínica"
+            description="A aplicação de toxina botulínica suaviza linhas de expressão da testa, entre as sobrancelhas e ao redor dos olhos, prevenindo o aprofundamento das rugas. O resultado preserva a expressão natural do rosto."
           />
           <Specialty
-            title="Clareamento e Estética Dental"
-            description="O clareamento dental é um tratamento estético que visa remover manchas e devolver a brancura natural dos dentes. Já a estética dental engloba uma série de procedimentos que visam melhorar a aparência do sorriso, como o uso de facetas de porcelana, resinas compostas e outros recursos."
+            title="Bichectomia"
+            description="A bichectomia é a remoção parcial das bolsas de Bichat, presentes nas bochechas. O procedimento afina o terço inferior do rosto, evidenciando os contornos naturais e trazendo uma aparência mais alongada e definida."
           />
           <Specialty
-            title="Alinhadores Invisíveis"
-            description="Os alinhadores invisíveis são uma alternativa aos aparelhos ortodônticos tradicionais. São placas transparentes e removíveis que corrigem problemas de alinhamento dos dentes de forma discreta e confortável."
+            title="Bioestimuladores de Colágeno"
+            description="Os bioestimuladores estimulam a produção natural de colágeno pela pele, restaurando firmeza, viço e sustentação. Indicado para quem busca um rejuvenescimento gradual e duradouro, sem alterar os traços do rosto."
           />
           <Specialty
-            title="Tratamento de Canal"
-            description="O tratamento de canal é um procedimento odontológico que visa salvar um dente que está com a polpa infeccionada ou inflamada. Durante o tratamento, a polpa do dente é removida e o canal radicular é limpo e obturado."
-          />
-          <Specialty
-            title="Exodontia de Terceiros Molares - Sisos"
-            description="A exodontia de terceiros molares, popularmente conhecidos como sisos, é a remoção cirúrgica desses dentes. A cirurgia é indicada quando os sisos estão causando dor, inflamação ou atrapalhando o alinhamento dos outros dentes."
+            title="Rinomodelação"
+            description="A rinomodelação é uma alternativa não cirúrgica para corrigir pequenas imperfeições do nariz, como assimetrias e projeção da ponta. Com ácido hialurônico, é possível refinar o formato do nariz em uma única sessão, sem cortes ou recuperação prolongada."
           />
 
 
@@ -135,9 +131,9 @@ export function Specialties() {
           <Heading
             color="battleship"
             size="lg"
-            text="O que oferecemos para você e sua saúde"
+            text="O que oferecemos para realçar sua beleza natural"
             isHighlighted
-            highlightedText={['oferecemos', 'você', 'saúde']}
+            highlightedText={['oferecemos', 'beleza natural']}
           />
         </Flex>
         <Box mt={10} h="100%" pb={0}>

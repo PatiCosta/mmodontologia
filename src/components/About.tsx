@@ -49,9 +49,9 @@ export function About() {
             <Heading
               color={isMobile ? "eerie" : 'battleship'}
               size={isMobile ? "md" : 'lg'}
-              text="Tudo o que você precisa em um só lugar"
+              text="Harmonização orofacial com resultado natural"
               isHighlighted
-              highlightedText={['Tudo', 'um só']}
+              highlightedText={['Harmonização', 'natural']}
             />
           </Box>
           <Text
@@ -59,17 +59,15 @@ export function About() {
             lineHeight={isMobile ? "md" : 'lg'}
             textAlign={['justify', 'justify', 'justify', 'start', 'start']}
           >
-            Aqui, você tem acesso a uma equipe multidisciplinar altamente
-            qualificada que combina o conhecimento da odontologia com a
-            expertise da harmonização facial, proporcionando um atendimento
-            integrado e personalizado. Com tecnologia de ponta e tratamentos
-            inovadores, garantimos resultados excepcionais para a sua saúde
-            bucal e estética facial. Além disso, prezamos pelo conforto e
-            bem-estar dos nossos pacientes, criando uma experiência acolhedora e
-            satisfatória em um só lugar. Agende sua consulta e descubra como
-            podemos transformar o seu sorriso e harmonizar o seu rosto de forma
-            única e especial. Seja bem-vindo ao espaço onde a sua beleza e saúde
-            são prioridades em um ambiente de excelência.
+            Aqui, você encontra atendimento especializado em harmonização
+            orofacial, com foco em realçar a beleza que já existe em você.
+            Combinamos técnica, sensibilidade estética e tecnologia de ponta
+            para oferecer resultados naturais, harmônicos e duradouros. Cada
+            avaliação é personalizada, respeitando as características únicas do
+            seu rosto e as suas expectativas. Prezamos pelo conforto e
+            bem-estar, criando uma experiência acolhedora do primeiro contato
+            ao acompanhamento pós-procedimento. Agende sua avaliação e descubra
+            como podemos harmonizar o seu rosto de forma única e especial.
           </Text>
         </Flex>
         <Flex alignItems="end" pl={[4, 0, 0, 20, 20]} pr={[4, 0, 0, 32, 32]} pt={[0, 0, 0, 16, 16]} >
