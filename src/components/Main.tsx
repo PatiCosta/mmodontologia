@@ -49,9 +49,15 @@ export function Main() {
             <Flex direction="column" gap={4} alignItems={["start", "start", "start", "end", "end"]} py={2}>
 
               <Text fontSize={"lg"} lineHeight='md' textAlign='start' pr={[8, 8, 8, 0, 0]}>
+                Harmonização orofacial que realça sua beleza natural — sem parecer artificial.
+                Agenda com vagas limitadas por semana.
+              </Text>
+              {/* versão anterior:
+              <Text fontSize={"lg"} lineHeight='md' textAlign='start' pr={[8, 8, 8, 0, 0]}>
                 Descubra a arte da harmonização facial e do sorriso perfeito
                 conosco, onde a beleza e a saúde se unem para transformar vidas.
               </Text>
+              */}
 
             </Flex>
             <ContactButton isDark={true} />
@@ -73,6 +79,29 @@ export function Main() {
 
           >
             <Button
+              as="a"
+              href="https://wa.me/5548996437416?text=Olá, acessei o site da Dra. Marina Maragno e gostaria de agendar minha avaliação"
+              target="_blank"
+              rel="noopener noreferrer"
+              w="100%"
+              py={6}
+              gap={4}
+              display="flex"
+              alignItems="center"
+              bgColor="rgba(32, 34, 34, 0.25)"
+              _hover={{ bgColor: 'rgba(32, 34, 34, 0.40)' }}
+              transition="all 0.2s ease"
+              borderRadius="full"
+              backdropFilter="auto"
+              backdropBlur="5px"
+            >
+              <Text color="light" fontWeight="thin">
+                Agendar avaliação pelo WhatsApp
+              </Text>
+              <MoveRight size={24} color="#fefefe" />
+            </Button>
+            {/* versão anterior:
+            <Button
               w="100%"
               py={6}
               gap={4}
@@ -90,6 +119,7 @@ export function Main() {
               </Text>
               <MoveRight size={24} color="#fefefe" />
             </Button>
+            */}
 
 
           </Flex>
@@ -149,6 +179,17 @@ export function Main() {
         <Heading
           size={isMobile ? "md" : "lg"}
           fontSize={['1.8rem', '1.8rem', '1.8rem', '2.5rem', '2.5rem']}
+          text="Harmonização orofacial que realça sua beleza natural — sem parecer artificial."
+          color={"eerie"}
+          isHighlighted
+          highlightedText={['beleza natural', 'sem parecer artificial']}
+          textAlign={["start", "start", "start", "start", "start"]}
+          pr={[4, 8, 8, 8, 0]}
+        />
+        {/* versão anterior:
+        <Heading
+          size={isMobile ? "md" : "lg"}
+          fontSize={['1.8rem', '1.8rem', '1.8rem', '2.5rem', '2.5rem']}
           text="Realçando a beleza que já existe em você."
           color={"eerie"}
           isHighlighted
@@ -156,6 +197,7 @@ export function Main() {
           textAlign={["start", "start", "start", "start", "start"]}
           pr={[4, 8, 8, 8, 0]}
         />
+        */}
 
         {isMobile ? '' :
 
@@ -163,9 +205,14 @@ export function Main() {
           <Flex direction="column" gap={4} alignItems={["start", "start", "start", "end", "end"]} pb={3}>
 
             <Text fontSize={isMobile ? "md" : "lg"} lineHeight={isMobile ? "sm" : "lg"} textAlign={["start", "start", "start", "end", "end"]} pr={[8, 8, 8, 0, 0]}>
+              Você sai da avaliação sabendo exatamente o que vai mudar — e com um plano personalizado para o seu caso. Agenda com vagas limitadas por semana.
+            </Text>
+            {/* versão anterior:
+            <Text fontSize={isMobile ? "md" : "lg"} lineHeight={isMobile ? "sm" : "lg"} textAlign={["start", "start", "start", "end", "end"]} pr={[8, 8, 8, 0, 0]}>
               Descubra a arte da harmonização facial e do sorriso perfeito
               conosco, onde a beleza e a saúde se unem para transformar vidas.
             </Text>
+            */}
 
           </Flex>
         }

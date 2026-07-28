@@ -2,7 +2,7 @@ import { Html, Head, Main, NextScript } from 'next/document'
 
 export default function Document() {
   return (
-    <Html lang="en">
+    <Html lang="pt-BR">
       <Head>
         {/* <!-- Google Tag Manager --> */}
         <script
@@ -19,8 +19,12 @@ export default function Document() {
         {/* <!-- End Google Tag Manager --> */}
         
         {/* <!-- HTML Meta Tags --> */}
+        <meta name="description" content="Harmonização Orofacial em Florianópolis com a Dra. Marina Maragno. Realçando a beleza que já existe em você — sem parecer artificial." />
+        <meta name="keywords" content="Harmonização Orofacial, Harmonização Facial, Preenchimento Labial, Toxina Botulínica, Bichectomia, Bioestimulador de Colágeno, Rinomodelação, Florianópolis, Dra. Marina Maragno" />
+        {/* versão anterior:
         <meta name="description" content="Realçando a beleza que já existe em você." />
         <meta name="keywords" content="Prótese Dentária, Endodontia, Implantodontia, Cirurgia oral menor, Ortodontia" />
+        */}
 
         {/* <!-- Facebook Meta Tags --> */}
         <meta property="og:url" content="http://www.dramarinamaragno.com.br/" />

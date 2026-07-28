@@ -58,6 +58,32 @@ export function Specialties() {
           divider={<Box h="0.5px" bgColor="silver" w="80%" />}
         >
           <Specialty
+            title="Preenchimento Labial"
+            description="Lábios com volume equilibrado, contorno definido e aparência natural. Ideal para quem quer valorizar o sorriso sem exageros — o resultado é você, com o melhor de você. Sessão única, com resultado imediato e duração de 8 a 12 meses."
+          />
+          <Specialty
+            title="Toxina Botulínica"
+            description="Suaviza as linhas de expressão da testa, entre as sobrancelhas e ao redor dos olhos. Você continua expressando emoção normalmente — só que sem as marcas que te envelhecem. Efeito começa em 3 a 7 dias e dura em média 4 a 6 meses."
+          />
+          <Specialty
+            title="Bichectomia"
+            description="Afinamento natural do terço inferior do rosto, valorizando as maçãs e o contorno da mandíbula. Indicado para quem sente que o rosto parece cheio mesmo em bom peso. Resultado definitivo, com recuperação em cerca de uma semana."
+          />
+          <Specialty
+            title="Bioestimuladores de Colágeno"
+            description="Estimula seu próprio colágeno, restaurando firmeza e viço da pele de forma gradual. Perfeito para quem quer rejuvenescer sem alterar traços — as pessoas vão perceber que você está bem, sem saber exatamente por quê."
+          />
+          <Specialty
+            title="Rinomodelação"
+            description="Alternativa não cirúrgica para refinar o formato do nariz — corrige pequenas assimetrias, projeta a ponta e disfarça o dorso. Feito em uma única sessão, sem cortes, sem gesso e sem dias de recuperação."
+          />
+          <Specialty
+            title="Harmonização Facial Completa"
+            description="Um plano integrado que combina os procedimentos ideais para o seu rosto e seus objetivos. A Dra. Marina desenha o passo a passo com você, respeitando seu tempo, seu orçamento e o resultado que faz sentido para a sua fase."
+          />
+
+          {/* versão anterior (odontológica) — preservada caso seja necessário voltar
+          <Specialty
             title="Harmonização Orofacial"
             description="A harmonização orofacial é um conjunto de procedimentos estéticos que visam equilibrar as proporções do rosto, proporcionando um sorriso mais harmônico e rejuvenescendo a aparência. Através de técnicas como aplicação de ácido hialurônico, é possível corrigir assimetrias, aumentar o volume dos lábios, suavizar rugas e definir o contorno facial."
           />
@@ -85,6 +111,7 @@ export function Specialties() {
             title="Exodontia de Terceiros Molares - Sisos"
             description="A exodontia de terceiros molares, popularmente conhecidos como sisos, é a remoção cirúrgica desses dentes. A cirurgia é indicada quando os sisos estão causando dor, inflamação ou atrapalhando o alinhamento dos outros dentes."
           />
+          */}
 
 
         {isMobile ?
@@ -113,7 +140,7 @@ export function Specialties() {
           :
           ''}
         <Flex alignItems="end" pl={[4, 4, 4, 4, 32]} pr={[4, 4, 4, 4, 20]} mt={[-60, -16, -16, 0, 0]} pt={[0, 16, 16, 16, 16]} bgColor={["none", "none", "none", "dim", "dim"]}>
-          <ContactButton />
+          <ContactButton label="Quero saber qual é o meu caso" />
         </Flex>
       </Box>
 
@@ -135,10 +162,19 @@ export function Specialties() {
           <Heading
             color="battleship"
             size="lg"
+            text="Procedimentos que valorizam a sua beleza natural"
+            isHighlighted
+            highlightedText={['valorizam', 'beleza natural']}
+          />
+          {/* versão anterior:
+          <Heading
+            color="battleship"
+            size="lg"
             text="O que oferecemos para você e sua saúde"
             isHighlighted
             highlightedText={['oferecemos', 'você', 'saúde']}
           />
+          */}
         </Flex>
         <Box mt={10} h="100%" pb={0}>
           <Box

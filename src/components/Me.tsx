@@ -57,6 +57,25 @@ export function Me() {
             <Box h="0.5px" w={64} bgColor="silver" mt={[8, 8, 8, 14, 14]} />
           </Box>
           <Text fontSize="lg" lineHeight="lg">
+            Sou a Dra. Marina Maragno. Escolhi a Harmonização Orofacial porque
+            acredito que estética de verdade é aquela que ninguém precisa
+            adivinhar — é a versão mais bonita de você, sem parecer que você
+            fez algo.
+            <br></br><br></br>
+            Sou formada pela Universidade Federal de Santa Catarina, com
+            especializações e atualização constante em harmonização facial. Já
+            atendi <strong>+ [XXX] pacientes</strong> em Florianópolis,
+            construindo um trabalho que valoriza a individualidade de cada
+            rosto.
+            <br></br><br></br>
+            Meu compromisso na sua primeira consulta é simples: te ouvir de
+            verdade, te mostrar o que faz sentido para o seu caso e o que não
+            faz, e devolver a decisão para você — sem pressão, sem pacote
+            pronto, sem "vender" procedimento.
+          </Text>
+          {/* placeholder [XXX] — número de pacientes atendidos a ser confirmado com a doutora */}
+          {/* versão anterior:
+          <Text fontSize="lg" lineHeight="lg">
             A Dra. Marina, apaixonada por transformar sorrisos e vidas, lidera nossa equipe de especialistas. Formada pela Universidade Federal de Santa Catarina, sua paixão pela área a levou a construir uma carreira sólida, com foco em Harmonização Orofacial.
             <br></br> <br></br>
             Seu currículo abrangente inclui diversas especializações e cursos em odontologia estética, harmonização facial e implantodontia. Além disso, a Dra. Marina possui Aperfeiçoamento em implantodontia e prótese, bem como em Cirurgia oral menor, garantindo um atendimento completo e personalizado aos pacientes.
@@ -65,6 +84,7 @@ export function Me() {
             <br></br> <br></br>
             Nossa clínica conta com uma equipe multidisciplinar de profissionais altamente qualificados, prontos para cuidar da sua saúde bucal em todas as áreas. Oferecemos desde os tratamentos mais tradicionais até as técnicas mais avançadas, sempre com foco no seu bem-estar e satisfação.
           </Text>
+          */}
           <Link
           href='https://www.instagram.com/dramarinamaragno?igsh=MXkxbnI0NG52N2lo '
           color={'white'}
@@ -93,7 +113,7 @@ export function Me() {
         </Link>
         </Flex>
         <Flex alignItems="end" pt={16}>
-          <ContactButton isDark />
+          <ContactButton isDark label="Quero conversar com a Dra. Marina" />
         </Flex>
       </Box>
     </Flex>

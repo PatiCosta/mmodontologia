@@ -1,17 +1,32 @@
-import { Avatar, Box, Flex, Grid, Icon, Image, Text, useBreakpointValue } from '@chakra-ui/react'
+import { Avatar, Box, Flex, Grid, HStack, Icon, Image, Text, useBreakpointValue } from '@chakra-ui/react'
 import { Heading } from './Heading'
-import { ChatsTeardrop, Quotes } from 'phosphor-react'
+import { ChatsTeardrop, Quotes, Star } from 'phosphor-react'
 
 import { MoveLeft, MoveRight } from 'lucide-react'
 import { use, useState } from 'react'
 import { carouselPics } from './helpers/carousel'
 import { feedbackslist } from './helpers/feedbacks'
 
-function Feedback({ feedback, patient, imageURL }: { feedback: string, patient: string, imageURL: string }) {
+function StarRating({ rating }: { rating: number }) {
+  return (
+    <HStack spacing={1}>
+      {Array.from({ length: 5 }).map((_, i) => (
+        <Star
+          key={i}
+          size={18}
+          weight={i < rating ? 'fill' : 'regular'}
+          color={i < rating ? '#F5B301' : '#B1B1AE'}
+        />
+      ))}
+    </HStack>
+  )
+}
+
+function Feedback({ feedback, patient, imageURL, rating, procedure }: { feedback: string, patient: string, imageURL: string, rating: number, procedure: string }) {
   return (
     <Flex
       direction="column"
-      alignItems="center"
+      alignItems="start"
       justifyContent="space-between"
       px={10}
       pt={6}
@@ -21,30 +36,47 @@ function Feedback({ feedback, patient, imageURL }: { feedback: string, patient: 
       h="100%"
       bgColor="light"
     >
-      <Quotes size={32} weight="duotone" color="#B1B1AE" />
+      <Flex justifyContent="space-between" alignItems="center" w="100%">
+        <Quotes size={32} weight="duotone" color="#B1B1AE" />
+        <StarRating rating={rating} />
+      </Flex>
       <Text fontSize="lg" lineHeight="lg">
         {feedback}
       </Text>
-      <Flex alignItems="center" gap={3} justifyContent="start">
+      <Flex alignItems="center" gap={3} justifyContent="start" w="100%">
 
         {imageURL == '' ?
           <Avatar size="md" name="" bgColor={'battleship'} src="https://bit.ly/broken-link" />
           :
-          <Image boxSize={12} src={imageURL} />
+          <Image boxSize={12} src={imageURL} borderRadius="full" alt={patient} />
         }
 
         <Box>
           <Text fontSize="lg" lineHeight="lg" color="battleship">
             {patient}
           </Text>
-          {/* <Text fontSize="md" lineHeight="md" color="eerie">
-            {imageURL}
-          </Text> */}
+          <Text fontSize="sm" lineHeight="sm" color="dim">
+            {procedure}
+          </Text>
         </Box>
       </Flex>
     </Flex>
   )
 }
+/* versão anterior — sem StarRating, sem procedure:
+function Feedback({ feedback, patient, imageURL }: { feedback: string, patient: string, imageURL: string }) {
+  return (
+    <Flex direction="column" alignItems="center" justifyContent="space-between" px={10} pt={6} pb={8} gap={4} boxShadow="dark" h="100%" bgColor="light">
+      <Quotes size={32} weight="duotone" color="#B1B1AE" />
+      <Text fontSize="lg" lineHeight="lg">{feedback}</Text>
+      <Flex alignItems="center" gap={3} justifyContent="start">
+        {imageURL == '' ? <Avatar ... /> : <Image ... />}
+        <Box><Text ...>{patient}</Text></Box>
+      </Flex>
+    </Flex>
+  )
+}
+*/
 
 export function Feedbacks() {
 
@@ -124,6 +156,8 @@ export function Feedbacks() {
             feedback={feedbackslist[feedbackIndex].feedback}
             patient={feedbackslist[feedbackIndex].patient}
             imageURL={feedbackslist[feedbackIndex].imageURL}
+            rating={feedbackslist[feedbackIndex].rating}
+            procedure={feedbackslist[feedbackIndex].procedure}
           />
 
           <Flex
@@ -149,7 +183,7 @@ export function Feedbacks() {
         feedbackslist.map((feedback) => {
           return (
 
-            <Feedback key={feedback.id} feedback={feedback.feedback} patient={feedback.patient} imageURL={feedback.imageURL} />
+            <Feedback key={feedback.id} feedback={feedback.feedback} patient={feedback.patient} imageURL={feedback.imageURL} rating={feedback.rating} procedure={feedback.procedure} />
           )
         })
 

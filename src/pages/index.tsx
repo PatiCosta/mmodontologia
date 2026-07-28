@@ -1,5 +1,6 @@
 import { About } from '@/components/About'
 import { Data } from '@/components/Data'
+import { FAQ } from '@/components/FAQ'
 import { Feedbacks } from '@/components/Feedbacks'
 import { Footer } from '@/components/Footer'
 import { Gallery } from '@/components/Gallery'
@@ -26,6 +27,7 @@ export default function Home() {
       <Gallery />
       <Me />
       <Feedbacks />
+      <FAQ />
       <Location />
       <Footer />
       <WhatsButton />

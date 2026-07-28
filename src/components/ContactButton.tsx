@@ -1,11 +1,11 @@
 import { Button, Icon, Link, Text } from '@chakra-ui/react'
 import { MoveRight } from 'lucide-react'
 
-export function ContactButton({ isDark }: { isDark?: boolean }) {
-  
+export function ContactButton({ isDark, label }: { isDark?: boolean, label?: string }) {
+
   return (
     <Link
-      href='https://wa.me/5548996437416?text=Olá, acessei o site da MMOdontologia e gostaria de mais informações'
+      href='https://wa.me/5548996437416?text=Olá, acessei o site da Dra. Marina Maragno e gostaria de agendar minha avaliação'
       target='_blank'
       cursor={'pointer'}
       _hover={{ textDecoration: 'none'}}
@@ -25,7 +25,7 @@ export function ContactButton({ isDark }: { isDark?: boolean }) {
         gap={12}
       >
         <Text color={isDark ? 'light' : 'eerie'} fontWeight="thin">
-          Entre em contato conosco
+          {label ?? 'Agendar avaliação pelo WhatsApp'}
         </Text>
         <Icon
           as={MoveRight}
@@ -36,3 +36,22 @@ export function ContactButton({ isDark }: { isDark?: boolean }) {
     </Link>
   )
 }
+/* versão anterior — botão fixo "Entre em contato conosco", sem prop label:
+export function ContactButton({ isDark }: { isDark?: boolean }) {
+  return (
+    <Link
+      href='https://wa.me/5548996437416?text=Olá, acessei o site da MMOdontologia e gostaria de mais informações'
+      target='_blank'
+      cursor={'pointer'}
+      _hover={{ textDecoration: 'none'}}
+    >
+      <Button ...>
+        <Text color={isDark ? 'light' : 'eerie'} fontWeight="thin">
+          Entre em contato conosco
+        </Text>
+        ...
+      </Button>
+    </Link>
+  )
+}
+*/
