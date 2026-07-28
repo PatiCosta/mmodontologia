@@ -50,7 +50,7 @@ function FAQItem({ q, a, isOpen, onToggle }: { q: string; a: string; isOpen: boo
         <Box
           flexShrink={0}
           color="battleship"
-          transition="transform 0.3s ease"
+          transition="transform 0.25s ease-in-out"
           transform={isOpen ? 'rotate(45deg)' : 'rotate(0deg)'}
         >
           <Plus size={24} />
@@ -59,7 +59,10 @@ function FAQItem({ q, a, isOpen, onToggle }: { q: string; a: string; isOpen: boo
       <Collapse
         in={isOpen}
         animateOpacity
-        transition={{ enter: { duration: 0.35 }, exit: { duration: 0.25 } }}
+        transition={{
+          enter: { duration: 0.25, ease: 'easeInOut' },
+          exit: { duration: 0.25, ease: 'easeInOut' }
+        }}
       >
         <Text fontSize="md" lineHeight="md" color="dim" pt={4} pr={10}>
           {a}
