@@ -114,6 +114,7 @@ export function Specialties() {
           */}
 
 
+        {/* imagem de invisalign removida (remetia à parte dentária)
         {isMobile ?
           <Box
             bgImage="/assets/specialties/invisalign.png"
@@ -126,6 +127,7 @@ export function Specialties() {
           />
           :
           ''}
+        */}
         </VStack>
 
 
@@ -196,6 +198,7 @@ export function Specialties() {
                 h={["264px", "264px", "264px", "calc((100%/2) - 0.75rem)", "calc((100%/3) - 0.75rem)"]}
                 mt={6}
               />
+              {/* imagem de invisalign removida (remetia à parte dentária)
               <Box
                 bgImage="/assets/specialties/invisalign.png"
                 bgPosition="center"
@@ -204,6 +207,7 @@ export function Specialties() {
                 h={["264px", "264px", "264px", "calc((100%/2) - 0.75rem)", "calc((100%/4) - 0.75rem)"]}
                 mt={6}
               />
+              */}
             </>
           }
         </Box>

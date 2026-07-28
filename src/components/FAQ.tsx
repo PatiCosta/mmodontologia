@@ -1,6 +1,6 @@
 import { Box, Collapse, Flex, Text, useBreakpointValue } from '@chakra-ui/react'
 import { useState } from 'react'
-import { Plus, Minus } from 'lucide-react'
+import { Plus } from 'lucide-react'
 import { Heading } from './Heading'
 
 // respostas são placeholders — a doutora precisa revisar cada uma antes de publicar
@@ -31,9 +31,7 @@ const faqItems = [
   }
 ]
 
-function FAQItem({ q, a }: { q: string; a: string }) {
-  const [isOpen, setIsOpen] = useState(false)
-
+function FAQItem({ q, a, isOpen, onToggle }: { q: string; a: string; isOpen: boolean; onToggle: () => void }) {
   return (
     <Box borderBottom="0.5px solid" borderColor="silver" py={6}>
       <Flex
@@ -41,7 +39,7 @@ function FAQItem({ q, a }: { q: string; a: string }) {
         w="100%"
         alignItems="center"
         justifyContent="space-between"
-        onClick={() => setIsOpen((v) => !v)}
+        onClick={onToggle}
         cursor="pointer"
         textAlign="start"
         gap={4}
@@ -49,11 +47,20 @@ function FAQItem({ q, a }: { q: string; a: string }) {
         <Text fontSize="lg" lineHeight="lg" fontWeight="semibold" color="eerie">
           {q}
         </Text>
-        <Box flexShrink={0} color="battleship">
-          {isOpen ? <Minus size={24} /> : <Plus size={24} />}
+        <Box
+          flexShrink={0}
+          color="battleship"
+          transition="transform 0.3s ease"
+          transform={isOpen ? 'rotate(45deg)' : 'rotate(0deg)'}
+        >
+          <Plus size={24} />
         </Box>
       </Flex>
-      <Collapse in={isOpen} animateOpacity>
+      <Collapse
+        in={isOpen}
+        animateOpacity
+        transition={{ enter: { duration: 0.35 }, exit: { duration: 0.25 } }}
+      >
         <Text fontSize="md" lineHeight="md" color="dim" pt={4} pr={10}>
           {a}
         </Text>
@@ -71,8 +78,10 @@ export function FAQ() {
     xl: false
   })
 
+  const [openIndex, setOpenIndex] = useState<number | null>(null)
+
   return (
-    <Box id="#faq" mt={28} px={[4, 8, 8, 32, 32]}>
+    <Box id="#faq" mt={28} pb={28} px={[4, 8, 8, 32, 32]}>
       <Flex direction="column" alignItems="start" mb={12}>
         <Text fontSize="md" lineHeight="md" mb={1}>
           PERGUNTAS FREQUENTES
@@ -87,7 +96,13 @@ export function FAQ() {
       </Flex>
       <Box>
         {faqItems.map((item, idx) => (
-          <FAQItem key={idx} q={item.q} a={item.a} />
+          <FAQItem
+            key={idx}
+            q={item.q}
+            a={item.a}
+            isOpen={openIndex === idx}
+            onToggle={() => setOpenIndex(openIndex === idx ? null : idx)}
+          />
         ))}
       </Box>
     </Box>
