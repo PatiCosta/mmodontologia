@@ -1,5 +1,5 @@
-import { Box, Collapse, Flex, Text, useBreakpointValue } from '@chakra-ui/react'
-import { useState } from 'react'
+import { Box, Flex, Text, useBreakpointValue } from '@chakra-ui/react'
+import { useEffect, useRef, useState } from 'react'
 import { Plus } from 'lucide-react'
 import { Heading } from './Heading'
 
@@ -31,7 +31,22 @@ const faqItems = [
   }
 ]
 
+// altura é medida com ResizeObserver pra funcionar em qualquer viewport;
+// o Collapse do Chakra não animava a altura de forma confiável aqui (height: auto não é animável em CSS puro)
 function FAQItem({ q, a, isOpen, onToggle }: { q: string; a: string; isOpen: boolean; onToggle: () => void }) {
+  const contentRef = useRef<HTMLDivElement>(null)
+  const [contentHeight, setContentHeight] = useState(0)
+
+  useEffect(() => {
+    const el = contentRef.current
+    if (!el) return
+    const update = () => setContentHeight(el.scrollHeight)
+    update()
+    const observer = new ResizeObserver(update)
+    observer.observe(el)
+    return () => observer.disconnect()
+  }, [])
+
   return (
     <Box borderBottom="0.5px solid" borderColor="silver" py={6}>
       <Flex
@@ -50,24 +65,24 @@ function FAQItem({ q, a, isOpen, onToggle }: { q: string; a: string; isOpen: boo
         <Box
           flexShrink={0}
           color="battleship"
-          transition="transform 0.25s ease-in-out"
+          transition="transform 0.35s ease-in-out"
           transform={isOpen ? 'rotate(45deg)' : 'rotate(0deg)'}
         >
           <Plus size={24} />
         </Box>
       </Flex>
-      <Collapse
-        in={isOpen}
-        animateOpacity
-        transition={{
-          enter: { duration: 0.25, ease: 'easeInOut' },
-          exit: { duration: 0.25, ease: 'easeInOut' }
-        }}
+      <Box
+        overflow="hidden"
+        height={`${isOpen ? contentHeight : 0}px`}
+        opacity={isOpen ? 1 : 0}
+        transition="height 0.35s ease-in-out, opacity 0.3s ease-in-out"
       >
-        <Text fontSize="md" lineHeight="md" color="dim" pt={4} pr={10}>
-          {a}
-        </Text>
-      </Collapse>
+        <Box ref={contentRef}>
+          <Text fontSize="md" lineHeight="md" color="dim" pt={4} pr={10}>
+            {a}
+          </Text>
+        </Box>
+      </Box>
     </Box>
   )
 }
