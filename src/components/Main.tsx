@@ -52,6 +52,12 @@ export function Main() {
                 Descubra a arte da harmonização orofacial conosco, onde a
                 beleza e a naturalidade se unem para transformar vidas.
               </Text>
+              {/* versão anterior:
+              <Text fontSize={"lg"} lineHeight='md' textAlign='start' pr={[8, 8, 8, 0, 0]}>
+                Descubra a arte da harmonização facial e do sorriso perfeito
+                conosco, onde a beleza e a saúde se unem para transformar vidas.
+              </Text>
+              */}
 
             </Flex>
             <ContactButton isDark={true} />
@@ -163,9 +169,15 @@ export function Main() {
           <Flex direction="column" gap={4} alignItems={["start", "start", "start", "end", "end"]} pb={3}>
 
             <Text fontSize={isMobile ? "md" : "lg"} lineHeight={isMobile ? "sm" : "lg"} textAlign={["start", "start", "start", "end", "end"]} pr={[8, 8, 8, 0, 0]}>
+              Descubra a arte da harmonização orofacial conosco, onde a
+              beleza e a naturalidade se unem para transformar vidas.
+            </Text>
+            {/* versão anterior:
+            <Text fontSize={isMobile ? "md" : "lg"} lineHeight={isMobile ? "sm" : "lg"} textAlign={["start", "start", "start", "end", "end"]} pr={[8, 8, 8, 0, 0]}>
               Descubra a arte da harmonização facial e do sorriso perfeito
               conosco, onde a beleza e a saúde se unem para transformar vidas.
             </Text>
+            */}
 
           </Flex>
         }

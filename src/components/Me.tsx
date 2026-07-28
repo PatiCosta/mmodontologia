@@ -72,6 +72,17 @@ export function Me() {
             oferecer resultados harmônicos, sempre atenta às expectativas e à
             individualidade de cada rosto.
           </Text>
+          {/* versão anterior:
+          <Text fontSize="lg" lineHeight="lg">
+            A Dra. Marina, apaixonada por transformar sorrisos e vidas, lidera nossa equipe de especialistas. Formada pela Universidade Federal de Santa Catarina, sua paixão pela área a levou a construir uma carreira sólida, com foco em Harmonização Orofacial.
+            <br></br> <br></br>
+            Seu currículo abrangente inclui diversas especializações e cursos em odontologia estética, harmonização facial e implantodontia. Além disso, a Dra. Marina possui Aperfeiçoamento em implantodontia e prótese, bem como em Cirurgia oral menor, garantindo um atendimento completo e personalizado aos pacientes.
+            <br></br> <br></br>
+            Com vasta experiência e conhecimento, a Dra. Marina se dedica a oferecer resultados impecáveis, sempre atenta às necessidades e expectativas de cada indivíduo.
+            <br></br> <br></br>
+            Nossa clínica conta com uma equipe multidisciplinar de profissionais altamente qualificados, prontos para cuidar da sua saúde bucal em todas as áreas. Oferecemos desde os tratamentos mais tradicionais até as técnicas mais avançadas, sempre com foco no seu bem-estar e satisfação.
+          </Text>
+          */}
           <Link
           href='https://www.instagram.com/dramarinamaragno?igsh=MXkxbnI0NG52N2lo '
           color={'white'}

@@ -31,10 +31,26 @@ export const feedbackslist = [
         patient: 'Bruna T',
         imageURL:'https://lh3.googleusercontent.com/a-/ALV-UjUgUaVV4rCdawAa1yuZuMCNvwxZPytR9g7PJfQ6nJeLt0pRNUyJ=w75-h75-p-rp-mo-br100'
     },
+    /* versão anterior — depoimento cita "dentistas" explicitamente
     {
         id:6,
+        feedback:'Além da clínica ser linda, o atendimento é impecável desde o primeiro contato com a recepcionista até o consultório com todas as dentistas queridas e excelentes profissionais. Tudo o que fiz, amei! Depois que conheci essa clínica não quero mais saber de outro local! Me sinto completamente confiante em realizar todos os meus procedimentos com elas.',
+        patient: 'Gabrielly Ribeiro Alves',
+        imageURL:''
+    },
+    */
+    {
+        id:7,
         feedback:'Faço procedimentos com Marina faz 3 anos já, e cada x amo mais e mais! As mãos dela são leves e sempre com um atendimento impecável! Uma excelente profissional e um lindo ser humano ❤️',
         patient: 'Maria Ribeiro Sombrio',
         imageURL:'https://lh3.googleusercontent.com/a-/ALV-UjUx9lnb6x38_vn4EUYA33z08guPor_wRyZrn5NoHf9x2BZ36o7N=w75-h75-p-rp-mo-br100'
+    },
+    /* versão anterior — depoimento cita "alinhadores" (tratamento ortodôntico)
+    {
+        id:8,
+        feedback:'Excelente atendimento do início ao fim do tratamento! Estive sendo acompanhada por mais de dois anos durante o tratamento com alinhadores e o resultado está incrível, agradeço a experiência e as profissionais. ♡',
+        patient: 'Millena Mara',
+        imageURL:''
     }
+    */
 ]

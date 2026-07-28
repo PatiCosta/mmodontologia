@@ -190,6 +190,12 @@ export function Data() {
         <Text fontSize="lg" lineHeight="lg" color="light" textAlign={['center','center','center', 'start', 'start']}>
           Formação e atualização constantes em harmonização orofacial e estética facial.
         </Text>
+        {/* versão anterior:
+        <Heading color="light" size={isMobile ? 'xs' : 'sm'} mx={['auto','auto','auto','','']} text="Equipe" />
+        <Text fontSize="lg" lineHeight="lg" color="light" textAlign={['center','center','center', 'start', 'start']}>
+          Profissionais especializados em odontologia e estética facial.
+        </Text>
+        */}
       </Flex>
 
       <Flex px={[2, 2, 2, 12, 12]} pt={10} alignItems="start" gap={2} direction="column">
