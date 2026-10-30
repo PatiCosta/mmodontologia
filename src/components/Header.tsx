@@ -111,6 +111,7 @@ export function Header() {
               <MenuButton id="#especializações" title="ESPECIALIZAÇÕES" />
               <MenuButton id="#galeria" title="GALERIA" />
               <MenuButton id="#depoimentos" title="DEPOIMENTOS" />
+              <MenuButton id="#faq" title="DÚVIDAS" />
               <MenuButton id="#endereço" title="ENDEREÇO" />
             </Flex>
             <Flex alignItems="center" gap={4}>

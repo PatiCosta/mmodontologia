@@ -5,17 +5,24 @@ import { MoveDown } from 'lucide-react'
 
 function Specialty({
   title,
+  subtitle,
   description,
 }: {
   title: string
+  subtitle?: string
   description: string
 }) {
   return (
     <Flex alignItems="start" gap={6}>
       <Box w="px" bgColor="silver" h={10} mt={5} />
-      <Flex direction="column" gap={3} pb={4} alignItems="start">
+      <Flex direction="column" gap={2} pb={4} alignItems="start">
         <Heading color="dim" size="sm" text={title} />
-        <Text fontSize="lg" lineHeight="lg">
+        {subtitle && (
+          <Text fontSize="md" lineHeight="md" color="battleship" fontStyle="italic">
+            {subtitle}
+          </Text>
+        )}
+        <Text fontSize="lg" lineHeight="lg" mt={1}>
           {description}
         </Text>
       </Flex>
@@ -58,6 +65,55 @@ export function Specialties() {
           divider={<Box h="0.5px" bgColor="silver" w="80%" />}
         >
           <Specialty
+            title="Toxina Botulínica"
+            subtitle="Equilíbrio da musculatura e das expressões"
+            description="Atua na musculatura facial, suavizando rugas de expressão e prevenindo marcas mais profundas, sem perder a naturalidade dos movimentos."
+          />
+          <Specialty
+            title="Preenchimento com Ácido Hialurônico"
+            subtitle="Volume, estrutura e proporção"
+            description="Repõe volumes e estruturas que se perdem com o envelhecimento e valoriza pontos estratégicos da face, trazendo mais definição, proporção e beleza ao rosto."
+          />
+          <Specialty
+            title="Bioestimuladores de Colágeno"
+            subtitle="Firmeza e sustentação"
+            description="Estimulam a produção de colágeno, ajudando a recuperar a firmeza, a sustentação e a resistência que a pele perde naturalmente ao longo dos anos."
+          />
+          <Specialty
+            title="Tratamentos para a Pele"
+            subtitle="Qualidade, textura e renovação"
+            description="Tratamentos personalizados para melhorar textura, viço, poros, manchas e a qualidade da pele, como Skinvive, peelings, laser CO₂ e outros protocolos."
+          />
+
+          {/* versão anterior (6 procedimentos individuais) — preservada caso a doutora queira voltar
+          <Specialty
+            title="Preenchimento Labial"
+            description="Lábios com volume equilibrado, contorno definido e aparência natural. Ideal para quem quer valorizar o sorriso sem exageros — o resultado é você, com o melhor de você. Sessão única, com resultado imediato e duração de 8 a 12 meses."
+          />
+          <Specialty
+            title="Toxina Botulínica"
+            description="Suaviza as linhas de expressão da testa, entre as sobrancelhas e ao redor dos olhos. Você continua expressando emoção normalmente — só que sem as marcas que te envelhecem. Efeito começa em 3 a 7 dias e dura em média 4 a 6 meses."
+          />
+          <Specialty
+            title="Bichectomia"
+            description="Afinamento natural do terço inferior do rosto, valorizando as maçãs e o contorno da mandíbula. Indicado para quem sente que o rosto parece cheio mesmo em bom peso. Resultado definitivo, com recuperação em cerca de uma semana."
+          />
+          <Specialty
+            title="Bioestimuladores de Colágeno"
+            description="Estimula seu próprio colágeno, restaurando firmeza e viço da pele de forma gradual. Perfeito para quem quer rejuvenescer sem alterar traços — as pessoas vão perceber que você está bem, sem saber exatamente por quê."
+          />
+          <Specialty
+            title="Rinomodelação"
+            description="Alternativa não cirúrgica para refinar o formato do nariz — corrige pequenas assimetrias, projeta a ponta e disfarça o dorso. Feito em uma única sessão, sem cortes, sem gesso e sem dias de recuperação."
+          />
+          <Specialty
+            title="Harmonização Facial Completa"
+            description="Um plano integrado que combina os procedimentos ideais para o seu rosto e seus objetivos. A Dra. Marina desenha o passo a passo com você, respeitando seu tempo, seu orçamento e o resultado que faz sentido para a sua fase."
+          />
+          */}
+
+          {/* versão original (odontológica) — preservada caso seja necessário voltar
+          <Specialty
             title="Harmonização Orofacial"
             description="A harmonização orofacial é um conjunto de procedimentos estéticos que visam equilibrar as proporções do rosto, proporcionando um sorriso mais harmônico e rejuvenescendo a aparência. Através de técnicas como aplicação de ácido hialurônico, é possível corrigir assimetrias, aumentar o volume dos lábios, suavizar rugas e definir o contorno facial."
           />
@@ -85,8 +141,10 @@ export function Specialties() {
             title="Exodontia de Terceiros Molares - Sisos"
             description="A exodontia de terceiros molares, popularmente conhecidos como sisos, é a remoção cirúrgica desses dentes. A cirurgia é indicada quando os sisos estão causando dor, inflamação ou atrapalhando o alinhamento dos outros dentes."
           />
+          */}
 
 
+        {/* imagem de invisalign removida (remetia à parte dentária)
         {isMobile ?
           <Box
             bgImage="/assets/specialties/invisalign.png"
@@ -99,6 +157,7 @@ export function Specialties() {
           />
           :
           ''}
+        */}
         </VStack>
 
 
@@ -113,7 +172,7 @@ export function Specialties() {
           :
           ''}
         <Flex alignItems="end" pl={[4, 4, 4, 4, 32]} pr={[4, 4, 4, 4, 20]} mt={[-60, -16, -16, 0, 0]} pt={[0, 16, 16, 16, 16]} bgColor={["none", "none", "none", "dim", "dim"]}>
-          <ContactButton />
+          <ContactButton label="Quero saber qual é o meu caso" />
         </Flex>
       </Box>
 
@@ -130,8 +189,17 @@ export function Specialties() {
           w={["100%", "100%", "100%", "calc(100vw - (50vw + 8rem))", "calc(100vw - (50vw + 8rem))"]}
         >
           <Text fontSize="md" lineHeight="md" mb={1}>
-            ESPECIALIZAÇÕES
+            OS 4 PILARES DA HARMONIZAÇÃO FACIAL
           </Text>
+          <Heading
+            color="battleship"
+            size="lg"
+            text="Tratamentos que valorizam a sua beleza natural"
+            isHighlighted
+            highlightedText={['valorizam', 'beleza natural']}
+          />
+          {/* versão anterior (CRO diagnóstico): kicker "ESPECIALIZAÇÕES", título "Procedimentos que valorizam a sua beleza natural" */}
+          {/* versão original:
           <Heading
             color="battleship"
             size="lg"
@@ -139,6 +207,7 @@ export function Specialties() {
             isHighlighted
             highlightedText={['oferecemos', 'você', 'saúde']}
           />
+          */}
         </Flex>
         <Box mt={10} h="100%" pb={0}>
           <Box
@@ -160,6 +229,7 @@ export function Specialties() {
                 h={["264px", "264px", "264px", "calc((100%/2) - 0.75rem)", "calc((100%/3) - 0.75rem)"]}
                 mt={6}
               />
+              {/* imagem de invisalign removida (remetia à parte dentária)
               <Box
                 bgImage="/assets/specialties/invisalign.png"
                 bgPosition="center"
@@ -168,6 +238,7 @@ export function Specialties() {
                 h={["264px", "264px", "264px", "calc((100%/2) - 0.75rem)", "calc((100%/4) - 0.75rem)"]}
                 mt={6}
               />
+              */}
             </>
           }
         </Box>

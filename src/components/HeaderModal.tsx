@@ -66,6 +66,7 @@ export function ModalMenu({
                         <MenuButton id="#especializações" title="ESPECIALIZAÇÕES" />
                         <MenuButton id="#galeria" title="GALERIA" />
                         <MenuButton id="#depoimentos" title="DEPOIMENTOS" />
+                        <MenuButton id="#faq" title="DÚVIDAS" />
                         <MenuButton id="#endereço" title="ENDEREÇO" />
 
                         <Flex mx='auto' gap={2}>

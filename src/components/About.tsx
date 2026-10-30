@@ -49,11 +49,37 @@ export function About() {
             <Heading
               color={isMobile ? "eerie" : 'battleship'}
               size={isMobile ? "md" : 'lg'}
+              text="Você sai daqui sabendo exatamente o que vai mudar"
+              isHighlighted
+              highlightedText={['exatamente', 'vai mudar']}
+            />
+            {/* versão anterior:
+            <Heading
+              color={isMobile ? "eerie" : 'battleship'}
+              size={isMobile ? "md" : 'lg'}
               text="Tudo o que você precisa em um só lugar"
               isHighlighted
               highlightedText={['Tudo', 'um só']}
             />
+            */}
           </Box>
+          <Text
+            fontSize={isMobile ? "md" : 'lg'}
+            lineHeight={isMobile ? "md" : 'lg'}
+            textAlign={['justify', 'justify', 'justify', 'start', 'start']}
+          >
+            Na sua avaliação, você conhece as opções de harmonização orofacial
+            indicadas para o seu rosto e recebe um plano personalizado — com
+            expectativa de resultado, tempo de recuperação e valor.
+            <br></br><br></br>
+            Nada de linguagem confusa ou pressão para fechar procedimento na
+            hora. Você sai com clareza sobre o que faz sentido para você e
+            decide com calma. Se optar por seguir, cada etapa é conduzida com
+            técnica refinada e foco em resultados naturais — o tipo de mudança
+            que amigos e família percebem, mas não conseguem apontar de onde
+            vem.
+          </Text>
+          {/* versão anterior:
           <Text
             fontSize={isMobile ? "md" : 'lg'}
             lineHeight={isMobile ? "md" : 'lg'}
@@ -71,9 +97,10 @@ export function About() {
             única e especial. Seja bem-vindo ao espaço onde a sua beleza e saúde
             são prioridades em um ambiente de excelência.
           </Text>
+          */}
         </Flex>
         <Flex alignItems="end" pl={[4, 0, 0, 20, 20]} pr={[4, 0, 0, 32, 32]} pt={[0, 0, 0, 16, 16]} >
-          <ContactButton isDark={isMobile} />
+          <ContactButton isDark={isMobile} label="Quero minha avaliação personalizada" />
         </Flex>
       </Box>
     </Flex>
