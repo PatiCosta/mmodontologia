@@ -1,9 +1,46 @@
 import { Box, Flex, Text, useBreakpointValue } from '@chakra-ui/react'
 import { useEffect, useRef, useState } from 'react'
 import { Plus } from 'lucide-react'
+import { ContactButton } from './ContactButton'
 import { Heading } from './Heading'
 
-// respostas são placeholders — a doutora precisa revisar cada uma antes de publicar
+// perguntas e respostas enviadas pela Marina (29/10/2026), na ordem dela
+const faqItems = [
+  {
+    q: 'Não sei exatamente qual procedimento preciso. A avaliação é para mim?',
+    a: 'Sim. Você não precisa chegar à consulta sabendo quais procedimentos deseja realizar. A avaliação é justamente o momento de entender suas queixas, seus objetivos e as características do seu rosto. A partir disso, desenvolvemos um planejamento individualizado, respeitando sua identidade e suas necessidades.'
+  },
+  {
+    q: 'Harmonização facial significa preencher o rosto todo?',
+    a: 'Não. Harmonização facial não é sinônimo de preenchimento. O tratamento pode envolver toxina botulínica, bioestimuladores de colágeno, tecnologias para a pele e, quando indicado, ácido hialurônico. O objetivo é trabalhar o rosto de maneira global, sem intervenções desnecessárias.'
+  },
+  {
+    q: 'Tenho medo de ficar artificial. Como evitar esse resultado?',
+    a: 'Essa é uma preocupação muito comum. Na Arquitetura Facial 360™, consideramos suas características, proporções e expressões antes de indicar qualquer tratamento. A proposta é valorizar sua beleza individual, com planejamento criterioso e respeito aos limites de cada rosto.'
+  },
+  {
+    q: 'Posso começar a cuidar do meu rosto antes de apresentar sinais avançados de envelhecimento?',
+    a: 'Sim. O planejamento facial também pode ter uma abordagem preventiva, considerando a qualidade da pele, a movimentação muscular e as mudanças naturais do rosto ao longo do tempo. As indicações dependem da avaliação individual.'
+  },
+  {
+    q: 'Preciso realizar todos os procedimentos de uma só vez?',
+    a: 'Não. O planejamento pode ser realizado em etapas, conforme suas prioridades, necessidades clínicas e possibilidades. Nem sempre fazer mais significa alcançar um resultado melhor.'
+  },
+  {
+    q: 'Como funciona a primeira avaliação com a Dra. Marina?',
+    a: 'A consulta começa com uma conversa sobre suas queixas, expectativas e a imagem que deseja transmitir. Em seguida, realizamos uma análise facial individualizada para identificar as possibilidades de tratamento e construir um planejamento alinhado aos seus objetivos.'
+  },
+  {
+    q: 'Quanto custa um tratamento de harmonização facial?',
+    a: 'O investimento depende dos procedimentos indicados e das necessidades de cada paciente. Como trabalhamos com planejamentos individualizados, os valores são apresentados após a avaliação, com clareza sobre as etapas propostas.'
+  },
+  {
+    q: 'Como posso agendar minha avaliação?',
+    a: 'Basta entrar em contato com nossa equipe pelo WhatsApp. Vamos orientar você sobre os horários disponíveis e os próximos passos para sua consulta.'
+  },
+]
+
+/* versão anterior (CRO diagnóstico) — 6 perguntas placeholder que a Marina não aprovou:
 const faqItems = [
   {
     q: 'Os procedimentos doem?',
@@ -30,6 +67,7 @@ const faqItems = [
     a: 'Sim, quando realizada por profissional habilitado, com produtos aprovados pela ANVISA e em ambiente adequado. A Dra. Marina é formada pela UFSC e mantém especialização e atualização contínuas em harmonização facial.'
   }
 ]
+*/
 
 // altura é medida com ResizeObserver pra funcionar em qualquer viewport;
 // o Collapse do Chakra não animava a altura de forma confiável aqui (height: auto não é animável em CSS puro)
@@ -99,7 +137,8 @@ export function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(null)
 
   return (
-    <Box id="#faq" mt={28} pb={28} px={[4, 8, 8, 32, 32]}>
+    // pb desconta o mt={-28} da Location (que sobe por cima do fim desta seção): sobra 48px/80px de respiro abaixo do CTA
+    <Box id="#faq" mt={28} pb={[40, 40, 40, 48, 48]} px={[4, 8, 8, 32, 32]}>
       <Flex direction="column" alignItems="start" mb={12}>
         <Text fontSize="md" lineHeight="md" mb={1}>
           PERGUNTAS FREQUENTES
@@ -123,6 +162,28 @@ export function FAQ() {
           />
         ))}
       </Box>
+
+      {/* fechamento pedido pela Marina: frase + CTA pro WhatsApp logo abaixo do FAQ */}
+      <Flex
+        mt={[12, 12, 12, 16, 16]}
+        direction={['column', 'column', 'column', 'row', 'row']}
+        alignItems={['start', 'start', 'start', 'center', 'center']}
+        justifyContent="space-between"
+        gap={[6, 6, 6, 12, 12]}
+      >
+        <Heading
+          color="eerie"
+          size={isMobile ? 'sm' : 'md'}
+          text="Sua beleza não precisa seguir um padrão. Seu tratamento também não."
+          isHighlighted
+          // o destaque do Chakra não quebra linha: no celular divide em dois pra caber na largura
+          highlightedText={isMobile ? ['Seu tratamento', 'também não'] : 'Seu tratamento também não'}
+          maxW="40rem"
+        />
+        <Box flexShrink={0}>
+          <ContactButton isDark label="Agende sua avaliação" />
+        </Box>
+      </Flex>
     </Box>
   )
 }

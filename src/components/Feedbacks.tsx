@@ -1,11 +1,10 @@
-import { Avatar, Box, Flex, Grid, HStack, Icon, Image, Text, useBreakpointValue } from '@chakra-ui/react'
+import { Avatar, Box, Flex, Grid, HStack, Icon, Image, Link, Text, useBreakpointValue } from '@chakra-ui/react'
 import { Heading } from './Heading'
-import { ChatsTeardrop, Quotes, Star } from 'phosphor-react'
+import { ChatsTeardrop, GoogleLogo, Quotes, Star } from 'phosphor-react'
 
 import { MoveLeft, MoveRight } from 'lucide-react'
-import { use, useState } from 'react'
-import { carouselPics } from './helpers/carousel'
-import { feedbackslist } from './helpers/feedbacks'
+import { useEffect, useState } from 'react'
+import type { Review, ReviewsResponse } from '@/pages/api/reviews'
 
 function StarRating({ rating }: { rating: number }) {
   return (
@@ -22,7 +21,7 @@ function StarRating({ rating }: { rating: number }) {
   )
 }
 
-function Feedback({ feedback, patient, imageURL, rating, procedure }: { feedback: string, patient: string, imageURL: string, rating: number, procedure: string }) {
+function Feedback({ review, showGoogleBadge }: { review: Review; showGoogleBadge: boolean }) {
   return (
     <Flex
       direction="column"
@@ -38,44 +37,36 @@ function Feedback({ feedback, patient, imageURL, rating, procedure }: { feedback
     >
       <Flex justifyContent="space-between" alignItems="center" w="100%">
         <Quotes size={32} weight="duotone" color="#B1B1AE" />
-        <StarRating rating={rating} />
+        <StarRating rating={review.rating} />
       </Flex>
-      <Text fontSize="lg" lineHeight="lg">
-        {feedback}
+      <Text fontSize="lg" lineHeight="lg" noOfLines={8}>
+        {review.text}
       </Text>
-      <Flex alignItems="center" gap={3} justifyContent="start" w="100%">
-
-        {imageURL == '' ?
-          <Avatar size="md" name="" bgColor={'battleship'} src="https://bit.ly/broken-link" />
-          :
-          <Image boxSize={12} src={imageURL} borderRadius="full" alt={patient} />
-        }
-
-        <Box>
-          <Text fontSize="lg" lineHeight="lg" color="battleship">
-            {patient}
-          </Text>
-          <Text fontSize="sm" lineHeight="sm" color="dim">
-            {procedure}
-          </Text>
-        </Box>
+      <Flex alignItems="center" gap={3} justifyContent="space-between" w="100%">
+        <Flex alignItems="center" gap={3}>
+          {review.authorPhotoUrl ? (
+            <Image boxSize={12} src={review.authorPhotoUrl} borderRadius="full" alt={review.author} referrerPolicy="no-referrer" />
+          ) : (
+            <Avatar size="md" name={review.author} bgColor={'battleship'} />
+          )}
+          <Box>
+            <Text fontSize="lg" lineHeight="lg" color="battleship">
+              {review.author}
+            </Text>
+            <Text fontSize="sm" lineHeight="sm" color="dim">
+              {review.relativeTime || review.procedure || ''}
+            </Text>
+          </Box>
+        </Flex>
+        {showGoogleBadge && (
+          <GoogleLogo size={20} weight="duotone" color="#B1B1AE" />
+        )}
       </Flex>
     </Flex>
   )
 }
-/* versão anterior — sem StarRating, sem procedure:
-function Feedback({ feedback, patient, imageURL }: { feedback: string, patient: string, imageURL: string }) {
-  return (
-    <Flex direction="column" alignItems="center" justifyContent="space-between" px={10} pt={6} pb={8} gap={4} boxShadow="dark" h="100%" bgColor="light">
-      <Quotes size={32} weight="duotone" color="#B1B1AE" />
-      <Text fontSize="lg" lineHeight="lg">{feedback}</Text>
-      <Flex alignItems="center" gap={3} justifyContent="start">
-        {imageURL == '' ? <Avatar ... /> : <Image ... />}
-        <Box><Text ...>{patient}</Text></Box>
-      </Flex>
-    </Flex>
-  )
-}
+/* versão anterior — props soltas em vez de objeto Review:
+function Feedback({ feedback, patient, imageURL, rating, procedure }: { feedback: string, patient: string, imageURL: string, rating: number, procedure: string }) { ... }
 */
 
 export function Feedbacks() {
@@ -89,8 +80,21 @@ export function Feedbacks() {
   })
 
   const [feedbackIndex, setFeedbackIndex] = useState(0)
+  const [data, setData] = useState<ReviewsResponse | null>(null)
 
-  const feedbacksLength = feedbackslist.length
+  useEffect(() => {
+    let cancelled = false
+    fetch('/api/reviews')
+      .then((r) => r.json() as Promise<ReviewsResponse>)
+      .then((json) => { if (!cancelled) setData(json) })
+      .catch((err) => { console.error('[Feedbacks] failed to load reviews', err) })
+    return () => { cancelled = true }
+  }, [])
+
+  const reviews = data?.reviews ?? []
+  const feedbacksLength = reviews.length
+  const showGoogleBadge = data?.source === 'google'
+  const currentIndex = Math.min(feedbackIndex, Math.max(0, feedbacksLength - 1))
 
   return (
     <Grid
@@ -107,6 +111,7 @@ export function Feedbacks() {
         direction="column"
         alignItems="start"
         justifyContent="space-between"
+        gap={8}
       >
         <Box>
           <Text fontSize="md" lineHeight="md" mb={1}>
@@ -120,6 +125,32 @@ export function Feedbacks() {
             highlightedText={['nossos', 'pacientes', 'dizer']}
           />
         </Box>
+        {data?.overallRating && data?.totalRatings ? (
+          <Flex direction="column" gap={2} alignItems="start">
+            <Flex alignItems="center" gap={2}>
+              <Text fontSize="2xl" fontWeight="semibold" color="eerie">
+                {data.overallRating.toFixed(1)}
+              </Text>
+              <StarRating rating={Math.round(data.overallRating)} />
+            </Flex>
+            <Text fontSize="sm" color="dim">
+              {data.totalRatings} avaliações no Google
+            </Text>
+            {data.googleMapsUrl && (
+              <Link
+                href={data.googleMapsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                fontSize="sm"
+                color="battleship"
+                textDecoration="underline"
+                _hover={{ color: 'eerie' }}
+              >
+                Ver todas no Google →
+              </Link>
+            )}
+          </Flex>
+        ) : null}
         <Flex alignItems="end" gap={3} w="100%">
           <ChatsTeardrop
             color="#B1B1AE"
@@ -131,11 +162,10 @@ export function Feedbacks() {
         </Flex>
       </Flex>
 
-      {isMobile ?
-
+      {feedbacksLength === 0 ? null : isMobile ? (
         <>
           <Flex
-            onClick={() => { feedbackIndex <= 0 ? setFeedbackIndex(feedbacksLength - 1) : setFeedbackIndex(feedbackIndex - 1) }}
+            onClick={() => { setFeedbackIndex(currentIndex <= 0 ? feedbacksLength - 1 : currentIndex - 1) }}
             alignItems="center"
             position="absolute"
             left={["0.4rem", "0.4rem", "0.4rem", "4rem", "4rem"]}
@@ -152,16 +182,10 @@ export function Feedbacks() {
             <Icon as={MoveLeft} boxSize={6} color="light" />
           </Flex>
 
-          <Feedback
-            feedback={feedbackslist[feedbackIndex].feedback}
-            patient={feedbackslist[feedbackIndex].patient}
-            imageURL={feedbackslist[feedbackIndex].imageURL}
-            rating={feedbackslist[feedbackIndex].rating}
-            procedure={feedbackslist[feedbackIndex].procedure}
-          />
+          <Feedback review={reviews[currentIndex]} showGoogleBadge={showGoogleBadge} />
 
           <Flex
-            onClick={() => { feedbackIndex >= feedbacksLength - 1 ? setFeedbackIndex(0) : setFeedbackIndex(feedbackIndex + 1) }}
+            onClick={() => { setFeedbackIndex(currentIndex >= feedbacksLength - 1 ? 0 : currentIndex + 1) }}
             alignItems="center"
             position="absolute"
             right={["0.4rem", "0.4rem", "0.4rem", "4rem", "4rem"]}
@@ -178,16 +202,11 @@ export function Feedbacks() {
             <Icon as={MoveRight} boxSize={6} color="light" />
           </Flex>
         </>
-        :
-
-        feedbackslist.map((feedback) => {
-          return (
-
-            <Feedback key={feedback.id} feedback={feedback.feedback} patient={feedback.patient} imageURL={feedback.imageURL} rating={feedback.rating} procedure={feedback.procedure} />
-          )
-        })
-
-      }
+      ) : (
+        reviews.slice(0, 5).map((review) => (
+          <Feedback key={review.id} review={review} showGoogleBadge={showGoogleBadge} />
+        ))
+      )}
 
 
     </Grid >

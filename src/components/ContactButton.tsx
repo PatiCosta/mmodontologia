@@ -25,8 +25,9 @@ export function ContactButton({ isDark, label }: { isDark?: boolean, label?: str
         gap={12}
       >
         <Text color={isDark ? 'light' : 'eerie'} fontWeight="thin">
-          {label ?? 'Agendar avaliação pelo WhatsApp'}
+          {label ?? 'Agendar minha avaliação'}
         </Text>
+        {/* default anterior: "Agendar avaliação pelo WhatsApp" */}
         <Icon
           as={MoveRight}
           boxSize={5}
